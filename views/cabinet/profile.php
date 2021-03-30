@@ -1,3 +1,15 @@
+
+<?php include ROOT . '/views/layouts/header.php'; ?>
+
+
+
+
+
+
+
+
+
+
 <table border="1">
     <caption>Данные пользователя</caption>
     <tr>
@@ -18,3 +30,13 @@
 <p>
     <a href="logout">Выход</a>
 </p>
+
+
+
+
+
+
+
+
+
+<?php include ROOT . '/views/layouts/footer.php'; ?>
