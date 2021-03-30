@@ -46,7 +46,6 @@ class User
     }
 
 
-
     /**
      * This is the function for creating a new user
      * @param $firstname
@@ -68,7 +67,6 @@ class User
         $result->bindParam(':phone', $phone, PDO::PARAM_STR);
         return $result->execute();
     }
-
 
 
     /**
@@ -114,11 +112,6 @@ class User
     }
 
 
-
-
-
-
-
     /**
      *
      * @param string $firstname
@@ -137,20 +130,6 @@ class User
         $result->execute();
         return $result->fetch(PDO::FETCH_ASSOC);
     }
-
-
-
-    public static function isAuthorized(string $name){
-        if(!Session::get($name)){
-            redirectError(401);
-        }
-        else
-        {
-
-            header('Location: profile');
-        }
-    }
-
 
 
 
