@@ -10,7 +10,7 @@ class ServerController
     public function accessDenied()
     {
 
-        require VIEW_ROOT . "users/list.php";
+        require VIEW_ROOT . "errors/401.php";
     }
 
 

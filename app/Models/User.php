@@ -14,12 +14,12 @@ class User
 {
 
     /**
+     * This is a function to show all users
      * @return array
      */
     public static function all()
     {
         $connect = Db::getConnection();
-
         $results = $connect->query("SELECT id, firstname, lastname, email, phone FROM user");
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -40,20 +40,20 @@ class User
         return preg_match('/[a-zA-Z0-9]{5,10}/', $password);
     }
 
-    /**
-     * @param $phone
-     * @return false|int
-     */
     public static function checkPhone($phone)
     {
         return preg_match('/^\+375[29,33,44,25]{2,2}[0-9]{7,7}$/', $phone);
     }
 
+
+
     /**
+     * This is the function for creating a new user
      * @param $firstname
      * @param $lastname
      * @param $email
      * @param $password
+     * @param $phone
      * @return bool
      */
     public static function create($firstname, $lastname, $email, $password, $phone)
@@ -66,35 +66,19 @@ class User
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
         $result->bindParam(':phone', $phone, PDO::PARAM_STR);
-        //Если запрос вернул false - Значит появилась ошибка, используя метод errorInfo который возращает нам массив, берем 3 ячейку массива где содержиться сообщение об ошибки и выводим ее
-        return $result->execute(); //выполнение запроса
+        return $result->execute();
     }
+
+
 
     /**
+     * @param $firstname
+     * @param $lastname
      * @param $email
-     * @return mixed
+     * @param $password
+     * @param $phone
+     * @return bool
      */
-
-    public static function selectByEmail($email)
-    {
-        $connect = Db::getConnection();
-
-        $sql = 'SELECT * FROM user WHERE email = :email';
-        $result = $connect->prepare($sql);
-        $result->bindParam(':email', $email, PDO::PARAM_STR);
-        $result->execute();
-
-        return $result->fetch();
-    }
-
-
-    public static function isAuthorized(){
-        if(!Session::get('user')){
-            redirectError(403);
-        };
-    }
-
-
     public static function update($firstname, $lastname, $email, $password, $phone)
     {
         $connect = Db::getConnection();
@@ -112,6 +96,62 @@ class User
 
         return $result->execute();
     }
+
+    /**
+     * This is a function for displaying a user by email
+     * @param $email
+     * @return mixed
+     */
+    public static function selectByEmail($email)
+    {
+        $connect = Db::getConnection();
+
+        $sql = 'SELECT * FROM user WHERE email = :email';
+        $result = $connect->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->execute();
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+
+
+
+
+
+    /**
+     *
+     * @param string $firstname
+     * @param string $lastname
+     * @param string $password
+     * @return mixed
+     */
+    public static function login($firstname, $lastname, $password)
+    {
+        $connect = Db::getConnection();
+        $sql = "SELECT * FROM user WHERE firstname = :firstname AND lastname = :lastname AND password = :password";
+        $result = $connect->prepare($sql);
+        $result->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+        $result->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+        $result->bindParam(':password', $password, PDO::PARAM_STR);
+        $result->execute();
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
+
+
+    public static function isAuthorized(string $name){
+        if(!Session::get($name)){
+            redirectError(401);
+        }
+        else
+        {
+
+            header('Location: profile');
+        }
+    }
+
+
 
 
 }

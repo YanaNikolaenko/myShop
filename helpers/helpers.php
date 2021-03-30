@@ -4,9 +4,10 @@
 function redirectError($code)
 {
     switch ($code) {
-        case 403:
+        case 401:
             {
-                header("location: " . ACCESSDENIED, false, $code);
+                header("Location: access-denied", false, $code);
+                echo "редирект";
             }
             break;
     }

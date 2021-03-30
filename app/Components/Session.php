@@ -51,8 +51,4 @@ class Session
         return session_destroy();
     }
 
-    public static function check ()
-    {
-        echo "it's ok!";
-    }
 }
