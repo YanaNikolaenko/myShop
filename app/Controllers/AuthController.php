@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use App\Components\Session;
+use App\Models\Auth;
 use App\Models\User;
 
 class AuthController
@@ -78,7 +79,6 @@ class AuthController
 
     public function logout()
     {
-        Session::delete('email');
-        header('Location: login');
+        Auth::logout();
     }
 }

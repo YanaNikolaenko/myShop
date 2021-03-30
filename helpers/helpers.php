@@ -6,8 +6,12 @@ function redirectError($code)
     switch ($code) {
         case 401:
             {
-                header("Location: access-denied", false, $code);
-                echo "редирект";
+                header("Location: login", true, 401);
+            }
+            break;
+        case 301:
+            {
+                header("Location: login", true, $code);
             }
             break;
     }

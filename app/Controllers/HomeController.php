@@ -10,24 +10,24 @@ use App\Models\User;
  * Class CabinetController
  * @package App\Controllers
  */
-class CabinetController
+class HomeController
 {
 
     public function __construct()
     {
         //Middlewares
-        UserMiddleware::isAuthorized('email');
+        //UserMiddleware::isAuthorized('email');
     }
 
 
     /**
      * This is a function for working with a profile
      */
-    public function profile()
+    public function index()
     {
-        $user = Auth::getUser();
+        //$sliders=Slider::all();
 
-        require VIEW_ROOT . "cabinet/profile.php";
+        require VIEW_ROOT . "home/index.php";
     }
 
 
