@@ -54,11 +54,10 @@ class AuthController
     {
         Session::delete('email');//для того, если ранее авторизованный пользователь перейдет на страницу логин, то сессия автоматически удалится и входить в профиль придется заново
 
-        $firstname = $_POST['firstname'];//принимаем данные из формы (логин,пароль)
-        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];//принимаем данные из формы (email,пароль)
         $password = $_POST['password'];
 
-        if ($user = User::login($firstname, $lastname, $password))
+        if ($user = User::login($email, $password))
         {
             Session::set('email', $user['email']);//создаем сессию авторизованному пользователю
             header('Location: profile');
