@@ -2,7 +2,7 @@
 <section class="slide1">
     <div class="wrap-slick1">
         <div class="slick1">
-            <div class="item-slick1 item1-slick1" style="background-image: url(/template/images/bg-video-01.jpg);">
+            <div class="item-slick1 item1-slick1" style="background-image: url(/template/images/master-slide-07.jpg);">
                 <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                     <h2 class="caption1-slide1 xl-text2 t-center bo14 p-b-6 animated visible-false m-b-22" data-appear="fadeInUp">
                         Leather Bags

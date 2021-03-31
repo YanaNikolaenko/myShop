@@ -3,8 +3,7 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
-use App\Models\Auth;
-use App\Models\User;
+use App\Models\Slider;
 
 /**
  * Class CabinetController
@@ -25,8 +24,8 @@ class HomeController
      */
     public function index()
     {
-        //$sliders=Slider::all();
-
+        $sliders=Slider::all();
+        require VIEW_ROOT . "slider/list.php";
         require VIEW_ROOT . "home/index.php";
     }
 

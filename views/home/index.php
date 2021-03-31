@@ -1,5 +1,14 @@
 <?php
 
+    require "vendor\autoload.php";
+    require_once 'config\const.php';
+
+    use App\Components\Router;
+
+    $router = new Router();
+    $router->run();
+
+
     include ROOT . '/views/layouts/header.php';
     include ROOT . '/views/parts/slide1.php';
     include ROOT . '/views/parts/banner.php';
