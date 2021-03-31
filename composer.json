@@ -23,7 +23,7 @@
     "create-user-table": "App\\Migrations\\CreateUserTable::up",
     "update-user-table": "App\\Migrations\\UpdateUserTable::addColumn",
     "seed-users": "App\\Seeds\\AddUsers::AddUsers",
-    "migrate-refresh": [
+    "migrate": [
       "@composer delete-all-tables",
       "@composer create-user-table",
       "@composer update-user-table"
