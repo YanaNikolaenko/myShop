@@ -119,13 +119,12 @@ class User
      * @param string $password
      * @return mixed
      */
-    public static function login($firstname, $lastname, $password)
+    public static function login($email, $password)
     {
         $connect = Db::getConnection();
-        $sql = "SELECT * FROM user WHERE firstname = :firstname AND lastname = :lastname AND password = :password";
+        $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
         $result = $connect->prepare($sql);
-        $result->bindParam(':firstname', $firstname, PDO::PARAM_STR);
-        $result->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
         $result->execute();
         return $result->fetch(PDO::FETCH_ASSOC);

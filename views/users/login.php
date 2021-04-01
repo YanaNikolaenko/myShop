@@ -1,16 +1,12 @@
 <p><b>Форма авторизации на сайте</b></p>
 <form action='' method="POST">
     <p>
-        Введите имя:
-        <input type="text" name="firstname" placeholder="Ваше имя">
-    </p>
-    <p>
-        Введите фамилию:
-        <input type="text" name="lastname" placeholder="Ваша фамилия">
+        Введите адрес электронной почты:
+        <input type="text" name="email" placeholder="Электронная почта">
     </p>
     <p>
         Введите пароль:
-        <input type="password" name="password" placeholder="Введите пароль">
+        <input type="password" name="password" placeholder="Пароль">
     </p>
     <input type="submit" name="submit" value="Войти"">
     <p>
