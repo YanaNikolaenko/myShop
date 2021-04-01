@@ -10,6 +10,7 @@ class DeleteTable extends Migration
 {
     public static function deleteAllTables()
     {
+        //TODO: исправить синтаксис
         $paramsPath =  './config/db_params.php';
         $params = include($paramsPath);
 

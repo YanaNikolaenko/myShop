@@ -1,14 +1,5 @@
 <?php
 
-    require "vendor\autoload.php";
-    require_once 'config\const.php';
-
-    use App\Components\Router;
-
-    $router = new Router();
-    $router->run();
-
-
     include ROOT . '/views/layouts/header.php';
     include ROOT . '/views/parts/slide1.php';
     include ROOT . '/views/parts/banner.php';
@@ -18,9 +9,3 @@
     include ROOT . '/views/parts/instagram.php';
     include ROOT . '/views/parts/shipping.php';
     include ROOT . '/views/layouts/footer.php';
-
-
-
-
-
-

@@ -47,6 +47,4 @@ class Slider
         return $result->fetch(PDO::FETCH_ASSOC);
     }
 
-
-
 }

@@ -215,9 +215,16 @@
                 </div>
 
                 <!--  -->
-                <a href="#" class="header-wrapicon1 dis-block m-l-30">
-                    <img src="/template/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
+                <div class="header-wrapicon1 dis-block m-l-30">
+                    <img src="/template/images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+
+
+                    <!-- Header cart noti -->
+                    <div class="header-cart header-dropdown">
+                        <!-- форма -->
+                    </div>
+
+                </div>
 
                 <span class="linedivide1"></span>
 

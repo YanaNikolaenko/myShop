@@ -19,21 +19,25 @@
     ]
   },
   "scripts": {
+
+
     "delete-all-tables": "App\\Migrations\\DeleteTable::deleteAllTables",
     "create-user-table": "App\\Migrations\\CreateUserTable::up",
     "update-user-table": "App\\Migrations\\UpdateUserTable::addColumn",
-    "seed-users": "App\\Seeds\\AddUsers::AddUsers",
-
     "create-slider-table": "App\\Migrations\\CreateSliderTable::up",
+
     "seed-slider": "App\\Seeds\\AddSlider::AddSlider",
+    "seed-users": "App\\Seeds\\AddUsers::AddUsers",
 
     "migrate": [
       "@composer delete-all-tables",
       "@composer create-user-table",
-      "@composer update-user-table"
+      "@composer update-user-table",
+      "@composer create-slider-table"
     ],
     "seed": [
-      "@composer seed-users"
+      "@composer seed-users",
+      "@composer seed-slider"
     ]
   }
 }
