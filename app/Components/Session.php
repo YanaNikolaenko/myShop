@@ -11,12 +11,11 @@ class Session
 
     /**
      * Устанавливаем ячейку по имени $name c содержимым $value.
-     * @param string $name - имя ячейки
-     * @param string $value - значение
-     * @return string - возращается установленное значение
+
      */
-    public static function set(string $name, string $value): string
+    public static function set($name, string $value): string
     {
+        $value = is_array($value) ? serialize($value) : $value;
         $_SESSION[$name] = $value;
         return $_SESSION[$name];
     }
@@ -28,7 +27,8 @@ class Session
      */
     public static function get($name)
     {
-        return isset($_SESSION[$name]) ? $_SESSION[$name] : false;
+        return is_array(unserialize($_SESSION[$name])) ? unserialize($_SESSION[$name]) : $_SESSION[$name];
+//        return isset($_SESSION[$name]) ? $_SESSION[$name] : false;
     }
 
     /**

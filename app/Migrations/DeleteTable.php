@@ -11,8 +11,9 @@ class DeleteTable extends Migration
     public static function deleteAllTables()
     {
         //TODO: исправить синтаксис
-        $paramsPath =  './config/db_params.php';
+        $paramsPath = './config/db_params.php';
         $params = include($paramsPath);
+
 
         $instance = new self();
         $instance->con->query("DROP DATABASE {$params['dbname']}; CREATE DATABASE {$params['dbname']}; USE {$params['dbname']};");
@@ -23,12 +24,9 @@ class DeleteTable extends Migration
         $instance = new self();
         $instance->con->query("DROP TABLE $name");
 
-        if ($instance->tableExist($name))
-        {
+        if ($instance->tableExist($name)) {
             echo "Table still exists" . "<br>";
-        }
-        else
-        {
+        } else {
             echo "Table deleted successfully" . "<br>";
         }
     }

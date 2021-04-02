@@ -17,3 +17,21 @@ function redirectError($code)
     }
 }
 
+function redirect($code, $url)
+{
+    switch ($code) {
+        case 301:
+            {
+                header("Location: $url", true, $code);
+            }
+            break;
+    }
+}
+
+
+function server($key)
+{
+    return $_SERVER[$key];
+}
+
+

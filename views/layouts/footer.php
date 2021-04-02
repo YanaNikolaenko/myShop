@@ -194,6 +194,7 @@
 </div>
 
 <!--===============================================================================================-->
+
 <script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--================================/template/===============================================================-->
 <script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/animsition/js/animsition.min.js"></script>

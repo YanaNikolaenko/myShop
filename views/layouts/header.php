@@ -33,17 +33,14 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/util.css">
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/main.css">
+    <script type="text/javascript" src="<?= TEMPLATE_ROOT?>js/message.js"></script>
     <!--===============================================================================================-->
 </head>
+
+
 <body class="animsition">
 
-<?php if (!is_null($errors)): ?>
-    <ul>
-        <?php foreach ($errors as $error): ?>
-            <li><?= $error ?></li>
-        <? endforeach ?>
-    </ul>
-<?php endif ?>
+
 
 <!-- header fixed -->
 <div class="wrap_header fixed-header2 trans-0-4">
