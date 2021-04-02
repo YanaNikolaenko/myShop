@@ -14,7 +14,6 @@ class AuthController
      */
     public function register()
     {
-        if (isset($_POST['submit'])) {
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
             $email = $_POST['email'];
@@ -29,7 +28,7 @@ class AuthController
             if (!User::checkPassword($password)) $errors[] = "Пароль введен некорректно";
             if (!($password === $confirm_password)) $errors[] = "Введенные пароли не совпадают";
             if (!User::checkPhone($phone)) $errors[] = "Телефон введен некорректно";
-        }
+
 
         if (empty($errors)) {
             if (User::create($firstname, $lastname, $email, $password, $phone))
@@ -40,7 +39,7 @@ class AuthController
             }
         }
 
-        require VIEW_ROOT . "users/register.php";
+        require VIEW_ROOT . "home/index.php";
     }
 
 
@@ -54,8 +53,8 @@ class AuthController
     {
         Session::delete('email');//для того, если ранее авторизованный пользователь перейдет на страницу логин, то сессия автоматически удалится и входить в профиль придется заново
 
-        $email = $_POST['email'];//принимаем данные из формы (email,пароль)
-        $password = $_POST['password'];
+            $email = $_POST['email'];//принимаем данные из формы (email,пароль)
+            $password = $_POST['password'];
 
         if ($user = User::login($email, $password))
         {
@@ -66,7 +65,7 @@ class AuthController
             echo "Вы ввели неправильный логин или пароль!";
         }
 
-        require VIEW_ROOT . "users/login.php";
+        require VIEW_ROOT . "home/index.php";
     }
 
 
@@ -79,5 +78,6 @@ class AuthController
     public function logout()
     {
         Auth::logout();
+        header('Location: /');
     }
 }

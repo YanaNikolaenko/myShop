@@ -5,43 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/template/images/icons/favicon.png"/>
+    <link rel="icon" type="image/png" href="<?=TEMPLATE_ROOT?>images/icons/favicon.png"/>
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/bootstrap/css/bootstrap.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/fonts/themify/themify-icons.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/fonts/elegant-font/html-css/style.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/animate/animate.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/css-hamburgers/hamburgers.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/animsition/css/animsition.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/select2/select2.min.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/daterangepicker/daterangepicker.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/slick/slick.css">
-    <!--=========================================/template/======================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="/template/css/util.css">
-    <link rel="stylesheet" type="text/css" href="/template/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>fonts/themify/themify-icons.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>fonts/elegant-font/html-css/style.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/lightbox2/css/lightbox.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/util.css">
+    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/main.css">
     <!--===============================================================================================-->
 </head>
 <body class="animsition">
 
-<!-- header fixed меню-->
+<?php if (!is_null($errors)): ?>
+    <ul>
+        <?php foreach ($errors as $error): ?>
+            <li><?= $error ?></li>
+        <? endforeach ?>
+    </ul>
+<?php endif ?>
+
+<!-- header fixed -->
 <div class="wrap_header fixed-header2 trans-0-4">
     <!-- Logo -->
     <a href="index.html" class="logo">
-        <img src="/template/images/icons/logo.png" alt="IMG-LOGO">
+        <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
     </a>
 
     <!-- Menu -->
@@ -85,15 +93,92 @@
     </div>
 
     <!-- Header Icon -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="header-icons">
-        <a href="#" class="header-wrapicon1 dis-block">
-            <img src="/template/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-        </a>
+        <div class="header-wrapicon1 dis-block m-l-30">
+            <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+            <!-- Header cart noti -->
+            <!--первая форма залогиниться-->
+            <div class="header-cart header-dropdown">
+                <form class="leave-comment" action="login" method="post">
+                    <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                        Enter email and password
+                    </div>
 
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="w-size10">
+                        <!-- Button -->
+                        <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                            Send
+                        </button>
+                    </div>
+
+                    <div style="font-size: 15px; padding-top: 20px; text-align: center;">
+                        Don't have an account yet?
+                    </div>
+                    <div class="register"style="font-size: 15px; text-align: center;">
+                        <div style="font-weight: bolder">Register now</div>
+                    </div>
+
+                </form>
+            </div>
+            <!--форма регистрации-->
+            <div class="header-cart header-dropdown2">
+                <form class="leave-comment" action="register" method="post">
+                    <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                        Fill in all the form fields
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="firstname" placeholder="First Name">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="lastname" placeholder="Last Name">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="confirm_password" placeholder="Repeat password">
+                    </div>
+
+                    <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 19px;">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone" placeholder="Phone Number">
+                    </div>
+
+                    <div class="w-size10">
+                        <!-- Button -->
+                        <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                            Send
+                        </button>
+                    </div>
+
+                    <div style="font-size: 15px; padding-top: 20px; text-align:  center;">
+                        Do you have an account?&#8195;<div class="login" style="font-weight: bolder">Login</div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
         <span class="linedivide1"></span>
 
         <div class="header-wrapicon2">
-            <img src="/template/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+            <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
             <span class="header-icons-noti">0</span>
 
             <!-- Header cart noti -->
@@ -101,7 +186,7 @@
                 <ul class="header-cart-wrapitem">
                     <li class="header-cart-item">
                         <div class="header-cart-item-img">
-                            <img src="/template/images/item-cart-01.jpg" alt="IMG">
+                            <img src="<?=TEMPLATE_ROOT?>images/item-cart-01.jpg" alt="IMG">
                         </div>
 
                         <div class="header-cart-item-txt">
@@ -117,7 +202,7 @@
 
                     <li class="header-cart-item">
                         <div class="header-cart-item-img">
-                            <img src="/template/images/item-cart-02.jpg" alt="IMG">
+                            <img src="<?=TEMPLATE_ROOT?>images/item-cart-02.jpg" alt="IMG">
                         </div>
 
                         <div class="header-cart-item-txt">
@@ -133,7 +218,7 @@
 
                     <li class="header-cart-item">
                         <div class="header-cart-item-img">
-                            <img src="/template/images/item-cart-03.jpg" alt="IMG">
+                            <img src="<?=TEMPLATE_ROOT?>images/item-cart-03.jpg" alt="IMG">
                         </div>
 
                         <div class="header-cart-item-txt">
@@ -199,7 +284,7 @@
 
             <!-- Logo2 -->
             <a href="index.html" class="logo2">
-                <img src="/template/images/icons/logo.png" alt="IMG-LOGO">
+                <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
             <div class="topbar-child2">
@@ -214,22 +299,94 @@
                     </select>
                 </div>
 
-                <!--  -->
+<!-- /////////////////////////////////////////////////////////////////////////// -->
                 <div class="header-wrapicon1 dis-block m-l-30">
-                    <img src="/template/images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-
-
+                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <!-- Header cart noti -->
+                    <!--первая форма залогиниться-->
                     <div class="header-cart header-dropdown">
-                        <!-- форма -->
-                    </div>
+                        <form class="leave-comment" action="login" method="post">
+                            <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                                Enter email and password
+                            </div>
 
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                            </div>
+
+                            <div class="w-size10">
+                                <!-- Button -->
+                                <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                                    Send
+                                </button>
+                            </div>
+
+                            <div style="font-size: 15px; padding-top: 20px; text-align: center;">
+                                Don't have an account yet?
+                            </div>
+                            <div class="register"style="font-size: 15px; text-align: center;">
+                                <div style="font-weight: bolder">Register now</div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--форма регистрации-->
+                    <div class="header-cart header-dropdown2">
+                        <form class="leave-comment" action="register" method="post">
+                            <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                                Fill in all the form fields
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="firstname" placeholder="First Name">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="lastname" placeholder="Last Name">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="confirm_password" placeholder="Repeat password">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 19px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone" placeholder="Phone Number">
+                            </div>
+
+                            <div class="w-size10">
+                                <!-- Button -->
+                                <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                                    Send
+                                </button>
+                            </div>
+
+                            <div style="font-size: 15px; padding-top: 20px; text-align:  center;">
+                                Do you have an account?&#8195;<div class="login" style="font-weight: bolder">Login</div>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
+<!-- /////////////////////////////////////////////////////////////////////////// -->
+
+
 
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2 m-r-13">
-                    <img src="/template/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
@@ -237,7 +394,7 @@
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="/template/images/item-cart-01.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-01.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -253,7 +410,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="/template/images/item-cart-02.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-02.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -269,7 +426,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="/template/images/item-cart-03.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-03.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -305,8 +462,29 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="wrap_header">
 
@@ -361,21 +539,98 @@
     <div class="wrap_header_mobile">
         <!-- Logo moblie -->
         <a href="index.html" class="logo-mobile">
-            <img src="/template/images/icons/logo.png" alt="IMG-LOGO">
+            <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
         <!-- Button show menu -->
         <div class="btn-show-menu">
             <!-- Header Icon mobile -->
             <div class="header-icons-mobile">
-                <a href="#" class="header-wrapicon1 dis-block">
-                    <img src="/template/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////-->
+                <div class="header-wrapicon1 dis-block">
+                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <!-- Header cart noti -->
+                    <!--первая форма залогиниться-->
+                    <div class="header-cart header-dropdown">
+                        <form class="leave-comment" action="login" method="post">
+                            <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                                Enter email and password
+                            </div>
 
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                            </div>
+
+                            <div class="w-size10">
+                                <!-- Button -->
+                                <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                                    Send
+                                </button>
+                            </div>
+
+                            <div style="font-size: 15px; padding-top: 20px; text-align: center;">
+                                Don't have an account yet?
+                            </div>
+                            <div class="register"style="font-size: 15px; text-align: center;">
+                                <div style="font-weight: bolder">Register now</div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--форма регистрации-->
+                    <div class="header-cart header-dropdown2">
+                        <form class="leave-comment" action="register" method="post">
+                            <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
+                                Fill in all the form fields
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="firstname" placeholder="First Name">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="lastname" placeholder="Last Name">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Email Address">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="password" placeholder="Password">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 10px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="confirm_password" placeholder="Repeat password">
+                            </div>
+
+                            <div style = "height: 30px; box-shadow: 0 0 1px 0; margin-bottom: 19px;">
+                                <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone" placeholder="Phone Number">
+                            </div>
+
+                            <div class="w-size10">
+                                <!-- Button -->
+                                <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                                    Send
+                                </button>
+                            </div>
+
+                            <div style="font-size: 15px; padding-top: 20px; text-align:  center;">
+                                Do you have an account?&#8195;<div class="login" style="font-weight: bolder">Login</div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////-->
                 <span class="linedivide2"></span>
 
                 <div class="header-wrapicon2">
-                    <img src="/template/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
@@ -383,7 +638,7 @@
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-01.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-01.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -399,7 +654,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-02.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-02.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
@@ -415,7 +670,7 @@
 
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="images/item-cart-03.jpg" alt="IMG">
+                                    <img src="<?=TEMPLATE_ROOT?>images/item-cart-03.jpg" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">

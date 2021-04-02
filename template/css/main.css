@@ -844,6 +844,14 @@ li.sale-noti > a {
   transform: scale(1);
 }
 
+.show-header-dropdown-reg {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
 .fixed-header .header-cart {
   top: 160%;
 }
@@ -1107,7 +1115,7 @@ li.sale-noti > a {
 
 .side-menu .sub-menu > li {
   padding-left: 12px;
-  padding-top: 
+  //padding-top:
 }
 
 .side-menu .sub-menu a:hover {

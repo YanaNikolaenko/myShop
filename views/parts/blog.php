@@ -12,7 +12,7 @@
                 <!-- Block3 -->
                 <div class="block3">
                     <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                        <img src="/template/images/blog-01.jpg" alt="IMG-BLOG">
+                        <img src="<?= TEMPLATE_ROOT?>images/blog-01.jpg" alt="IMG-BLOG">
                     </a>
 
                     <div class="block3-txt p-t-14">
@@ -36,7 +36,7 @@
                 <!-- Block3 -->
                 <div class="block3">
                     <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                        <img src="/template/images/blog-02.jpg" alt="IMG-BLOG">
+                        <img src="<?= TEMPLATE_ROOT?>images/blog-02.jpg" alt="IMG-BLOG">
                     </a>
 
                     <div class="block3-txt p-t-14">
@@ -60,7 +60,7 @@
                 <!-- Block3 -->
                 <div class="block3">
                     <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                        <img src="/template/images/blog-03.jpg" alt="IMG-BLOG">
+                        <img src="<?= TEMPLATE_ROOT?>images/blog-03.jpg" alt="IMG-BLOG">
                     </a>
 
                     <div class="block3-txt p-t-14">

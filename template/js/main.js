@@ -47,22 +47,31 @@
         $(this).parent().find('.header-dropdown')
     });
 
-    var menu = $('.js-show-header-dropdown');
+    var menu = $('.js-show-header-dropdown');//количество иконок самих, у которых есть данный класс (сейчас 2)
     var sub_menu_is_showed = -1;
 
+
     for(var i=0; i<menu.length; i++){
-        $(menu[i]).on('click', function(){ 
-            
-                if(jQuery.inArray( this, menu ) == sub_menu_is_showed){
-                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');
-                    sub_menu_is_showed = -1;
+        $(menu[i]).on('click', function(){
+                if(jQuery.inArray( this, menu ) == sub_menu_is_showed){//если ничего не показано еще в меню
+                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');//то показать меню одно
                 }
-                else {
-                    for (var i = 0; i < menu.length; i++) {
-                        $(menu[i]).parent().find('.header-dropdown').removeClass("show-header-dropdown");
+                else {//если меню уже показано
+                    for (var i = 0; i < menu.length; i++) {//удаляет ранее открытое (кликнутое) меню
+                        $(menu[i]).parent().find('.header-dropdown').removeClass("show-header-dropdown");//оставить в цикле!удаляет уже открытое
                     }
 
-                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');
+                    $('.register').on('click', function(){
+                        $(this).parent().parent().parent().find('.header-dropdown').removeClass("show-header-dropdown");//оставить в цикле!удаляет уже открытое
+                        $(this).parent().parent().parent().find('.header-dropdown2').toggleClass("show-header-dropdown");
+                    });
+
+                    $('.login').on('click', function(){
+                        $(this).parent().parent().parent().parent().find('.header-dropdown2').removeClass("show-header-dropdown");//оставить в цикле!удаляет уже открытое
+                        $('.login').parent().parent().parent().parent().find('.header-dropdown').toggleClass("show-header-dropdown");
+                    });
+
+                    $(this).parent().find('.header-dropdown').toggleClass('show-header-dropdown');//показывает новое кликнутое меню
                     sub_menu_is_showed = jQuery.inArray( this, menu );
                 }
         });
@@ -72,6 +81,12 @@
         event.stopPropagation();
     });
 
+    // $(".js-show-header-dropdown, .header-dropdown2").click(function(event){
+    //     event.stopPropagation();
+    // });
+
+
+    //если вызвано выпадающее меню и кликнуть в любое место страницы, то выпадающее меню пропадет
     $(window).on("click", function(){
         for (var i = 0; i < menu.length; i++) {
             $(menu[i]).parent().find('.header-dropdown').removeClass("show-header-dropdown");

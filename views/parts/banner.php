@@ -5,7 +5,7 @@
             <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                 <!-- block1 -->
                 <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="/template/images/banner-05.jpg" alt="IMG-BENNER">
+                    <img src="<?= TEMPLATE_ROOT?>images/banner-05.jpg" alt="IMG-BENNER">
 
                     <div class="block1-wrapbtn w-size2">
                         <!-- Button -->
@@ -19,7 +19,7 @@
             <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                 <!-- block1 -->
                 <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="/template/images/banner-03.jpg" alt="IMG-BENNER">
+                    <img src="<?= TEMPLATE_ROOT?>images/banner-03.jpg" alt="IMG-BENNER">
 
                     <div class="block1-wrapbtn w-size2">
                         <!-- Button -->
@@ -33,7 +33,7 @@
             <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                 <!-- block1 -->
                 <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="/template/images/banner-10.jpg" alt="IMG-BENNER">
+                    <img src="<?= TEMPLATE_ROOT?>images/banner-10.jpg" alt="IMG-BENNER">
 
                     <div class="block1-wrapbtn w-size2">
                         <!-- Button -->

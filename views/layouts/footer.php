@@ -141,23 +141,23 @@
 
     <div class="t-center p-l-15 p-r-15">
         <a href="#">
-            <img class="h-size2" src="/template/images/icons/paypal.png" alt="IMG-PAYPAL">
+            <img class="h-size2" src="<?= TEMPLATE_ROOT?>images/icons/paypal.png" alt="IMG-PAYPAL">
         </a>
 
         <a href="#">
-            <img class="h-size2" src="/template/images/icons/visa.png" alt="IMG-VISA">
+            <img class="h-size2" src="<?= TEMPLATE_ROOT?>images/icons/visa.png" alt="IMG-VISA">
         </a>
 
         <a href="#">
-            <img class="h-size2" src="/template/images/icons/mastercard.png" alt="IMG-MASTERCARD">
+            <img class="h-size2" src="<?= TEMPLATE_ROOT?>images/icons/mastercard.png" alt="IMG-MASTERCARD">
         </a>
 
         <a href="#">
-            <img class="h-size2" src="/template/images/icons/express.png" alt="IMG-EXPRESS">
+            <img class="h-size2" src="<?= TEMPLATE_ROOT?>images/icons/express.png" alt="IMG-EXPRESS">
         </a>
 
         <a href="#">
-            <img class="h-size2" src="/template/images/icons/discover.png" alt="IMG-DISCOVER">
+            <img class="h-size2" src="<?= TEMPLATE_ROOT?>images/icons/discover.png" alt="IMG-DISCOVER">
         </a>
 
         <div class="t-center s-text8 p-t-20">
@@ -185,7 +185,7 @@
         <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
 
         <div class="wrap-video-mo-01">
-            <div class="w-full wrap-pic-w op-0-0"><img src="/template/images/icons/video-16-9.jpg" alt="IMG"></div>
+            <div class="w-full wrap-pic-w op-0-0"><img src="<?= TEMPLATE_ROOT?>images/icons/video-16-9.jpg" alt="IMG"></div>
             <div class="video-mo-01">
                 <iframe src="https://www.youtube.com/embed/Nt8ZrWY2Cmk?rel=0&amp;showinfo=0" allowfullscreen></iframe>
             </div>
@@ -194,14 +194,14 @@
 </div>
 
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--================================/template/===============================================================-->
-<script type="text/javascript" src="/template/vendor/animsition/js/animsition.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/animsition/js/animsition.min.js"></script>
 <!--================================/template/===============================================================-->
-<script type="text/javascript" src="/template/vendor/bootstrap/js/popper.js"></script>
-<script type="text/javascript" src="/template/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/bootstrap/js/popper.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--================================/template/===============================================================-->
-<script type="text/javascript" src="/template/vendor/select2/select2.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/select2/select2.min.js"></script>
 <script type="text/javascript">
     $(".selection-1").select2({
         minimumResultsForSearch: 20,
@@ -209,14 +209,14 @@
     });
 </script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/slick/slick.min.js"></script>
-<script type="text/javascript" src="/template/js/slick-custom.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/slick/slick.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>js/slick-custom.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/countdowntime/countdowntime.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/lightbox2/js/lightbox.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/sweetalert/sweetalert.min.js"></script>
 <script type="text/javascript">
     $('.block2-btn-addcart').each(function(){
         var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
@@ -234,12 +234,12 @@
 </script>
 
 <!--===============================================================================================-->
-<script type="text/javascript" src="/template/vendor/parallax100/parallax100.js"></script>
+<script type="text/javascript" src="<?= TEMPLATE_ROOT?>vendor/parallax100/parallax100.js"></script>
 <script type="text/javascript">
     $('.parallax100').parallax100();
 </script>
 <!--===============================================================================================-->
-<script src="/template/js/main.js"></script>
+<script src="<?= TEMPLATE_ROOT?>js/main.js"></script>
 
 </body>
 </html>

@@ -17,10 +17,3 @@ function redirectError($code)
     }
 }
 
-
-
-//function redirect($url, $code)
-//{
-//   //TODO :: доделать локигу
-//
-//}

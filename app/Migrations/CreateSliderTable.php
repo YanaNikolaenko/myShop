@@ -24,7 +24,10 @@ class CreateSliderTable extends Migration
             "subtitle VARCHAR(30) NOT NULL," .
             "image VARCHAR(100) NOT NULL," .
             "label VARCHAR(15) NOT NULL," .
-            "link VARCHAR(50) NOT NULL" .
+            "link VARCHAR(50) NOT NULL," .
+            "big_style ENUM ('fadeInUp', 'rollIn', 'rotateInDownLeft') NOT NULL," .
+            "medium_style ENUM ('fadeInDown', 'lightSpeedIn', 'rotateInUpRight') NOT NULL," .
+            "small_style ENUM ('zoomIn', 'slideInUp', 'rotateIn') NOT NULL" .
             ")";
 
         if (!$instance->tableExist('slider')) {

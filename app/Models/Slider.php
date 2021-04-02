@@ -19,21 +19,25 @@ class Slider
     public static function all()
     {
         $connect = Db::getConnection();
-        $results = $connect->query("SELECT id, title, subtitle, image, label, link FROM slider");
+        $results = $connect->query("SELECT * FROM slider");
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function create($title, $subtitle, $image, $label, $link)
+    public static function create($title, $subtitle, $image, $label, $link, $big_style, $medium_style, $small_style)
     {
         $connect = Db::getConnection();
-        $sql = "INSERT INTO slider (title, subtitle, image, label, link) VALUES (:title, :subtitle, :image, :label, :link)";
+        $sql = "INSERT INTO slider (title, subtitle, image, label, link, big_style, medium_style, small_style) VALUES (:title, :subtitle, :image, :label, :link, :big_style, :medium_style, :small_style)";
         $result = $connect->prepare($sql);
         $result->bindParam(':title', $title, PDO::PARAM_STR);
         $result->bindParam(':subtitle', $subtitle, PDO::PARAM_STR);
         $result->bindParam(':image', $image, PDO::PARAM_STR);
         $result->bindParam(':label', $label, PDO::PARAM_STR);
         $result->bindParam(':link', $link, PDO::PARAM_STR);
+        $result->bindParam(':big_style', $big_style, PDO::PARAM_STR);
+        $result->bindParam(':medium_style', $medium_style, PDO::PARAM_STR);
+        $result->bindParam(':small_style', $small_style, PDO::PARAM_STR);
         return $result->execute();
+
     }
 
     public static function selectById($id)

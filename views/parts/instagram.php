@@ -9,7 +9,7 @@
     <div class="flex-w">
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-            <img src="/template/images/gallery-03.jpg" alt="IMG-INSTAGRAM">
+            <img src="<?= TEMPLATE_ROOT?>images/gallery-03.jpg" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -31,7 +31,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-            <img src="/template/images/gallery-07.jpg" alt="IMG-INSTAGRAM">
+            <img src="<?= TEMPLATE_ROOT?>images/gallery-07.jpg" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -53,7 +53,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-            <img src="/template/images/gallery-09.jpg" alt="IMG-INSTAGRAM">
+            <img src="<?= TEMPLATE_ROOT?>images/gallery-09.jpg" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -75,7 +75,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-            <img src="/template/images/gallery-13.jpg" alt="IMG-INSTAGRAM">
+            <img src="<?= TEMPLATE_ROOT?>images/gallery-13.jpg" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -97,7 +97,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-            <img src="/template/images/gallery-15.jpg" alt="IMG-INSTAGRAM">
+            <img src="<?= TEMPLATE_ROOT?>images/gallery-15.jpg" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
