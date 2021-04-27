@@ -6,7 +6,7 @@ use App\Middleware\UserMiddleware;
 use App\Models\Slider;
 
 /**
- * Class CabinetController
+ * Class HomeController
  * @package App\Controllers
  */
 class HomeController
@@ -24,13 +24,10 @@ class HomeController
      */
     public function index()
     {
-        $sliders=Slider::all();
         //require VIEW_ROOT . "slider/list.php";
 
 
-
-
-
+        $sliders=Slider::all();
 
         require VIEW_ROOT . "home/index.php";
     }

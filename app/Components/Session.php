@@ -11,9 +11,8 @@ class Session
 
     /**
      * Устанавливаем ячейку по имени $name c содержимым $value.
-
      */
-    public static function set($name, string $value): string
+    public static function set($name, $value): string
     {
         $value = is_array($value) ? serialize($value) : $value;
         $_SESSION[$name] = $value;

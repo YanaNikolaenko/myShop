@@ -15,7 +15,6 @@ class AuthController
      */
     public function register()
     {
-            //TODO: исправить
             if(server('REQUEST_METHOD') == 'POST'){
 
                 $firstname = $_POST['firstname'];
@@ -42,12 +41,11 @@ class AuthController
                         header('Location: profile');//сразу перенаправляю в созданный профиль
                     }
                 }else{
-
                     Session::set('errors', $errors);
                     redirect(301, server('HTTP_REFERER'));
                 }
-
-            }else{
+            }
+            else{
                 redirect(301, '/');
             }
     }
@@ -62,22 +60,25 @@ class AuthController
     public function login()
     {
 
-        //TODO: Дописать логику
+        if(server('REQUEST_METHOD') == 'POST'){
 
-        Session::delete('email');//для того, если ранее авторизованный пользователь перейдет на страницу логин, то сессия автоматически удалится и входить в профиль придется заново
-
+            //Session::delete('email');//для того, если ранее авторизованный пользователь перейдет на страницу логин, то сессия автоматически удалится и входить в профиль придется заново
             $email = $_POST['email'];//принимаем данные из формы (email,пароль)
             $password = $_POST['password'];
 
-        if ($user = User::login($email, $password))
-        {
-            Session::set('email', $user['email']);//создаем сессию авторизованному пользователю
-            header('Location: profile');
+            if ($user = User::login($email, $password))
+            {
+                Session::set('email', $user['email']);//создаем сессию авторизованному пользователю
+                header('Location: profile');
+            }
+            else if (!empty($_POST)){//нужно чтобы если поля еще не заполнены ничем - не выводилась ошибка, что неправильный логин/пароль
+                $errors = "Вы ввели неправильный логин или пароль!";
+                Session::set('errors', $errors);
+                redirect(301, server('HTTP_REFERER'));
+            }
+        }else{
+            redirect(301, '/');
         }
-        else if (!empty($_POST)){//нужно чтобы если поля еще не заполнены ничем - не выводилась ошибка, что неправильный логин/пароль
-            echo "Вы ввели неправильный логин или пароль!";
-        }
-
 
     }
 

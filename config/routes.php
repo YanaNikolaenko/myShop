@@ -8,5 +8,7 @@ return array (
     'profile' => 'cabinet/profile',
     'user' => 'user/list',
     'access-denied'=>'server/accessDenied',
-    '' => 'home/index',
+    'catalog' => 'catalog/index',
+    'product' => 'product/product',
+    '' => 'home/index'
 );

@@ -10,3 +10,9 @@ $router->run();
 
 
 
+use App\Migrations\DeleteTable;
+
+
+//echo "<pre>";
+//DeleteTable::deleteAllTables();
+//echo "</pre>";

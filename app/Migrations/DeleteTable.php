@@ -3,20 +3,21 @@
 
 namespace App\Migrations;
 
-
 use App\Components\Migration;
 
 class DeleteTable extends Migration
 {
     public static function deleteAllTables()
     {
-        //TODO: исправить синтаксис
-        $paramsPath = './config/db_params.php';
-        $params = include($paramsPath);
-
+        // TODO: доделать функцию по удалению таблиц, когда ф-ция config будет корректно работать
 
         $instance = new self();
-        $instance->con->query("DROP DATABASE {$params['dbname']}; CREATE DATABASE {$params['dbname']}; USE {$params['dbname']};");
+        //$param = $instance->config->config('db.dbname');
+
+        $param = config('db.ok.vasya.batman');
+        var_dump($param);
+
+        //$instance->con->query("DROP DATABASE " . $param . "; CREATE DATABASE " . $param . "; USE " . $param . ";");
     }
 
     public static function deleteTable($name)
