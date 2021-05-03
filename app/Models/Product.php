@@ -71,7 +71,7 @@ class Product
     {
         $connect = Db::getConnection();
 
-        $result = $connect->query('SELECT products.title as product, products.price as old_price, ROUND((products.price*products.discount)/100 , 2) as new_price, products.is_sale, products.is_new, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category');
+        $result = $connect->query('SELECT products.title as product, products.price as old_price, ROUND((products.price*(100 - products.discount))/100 , 2) as new_price, products.is_sale, products.is_new, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category');
         $products = $result->fetchAll(PDO::FETCH_ASSOC);//в products массив всех записей
 
         $count_img = count($products);//считает общее количество записей в результате запроса
@@ -93,7 +93,7 @@ class Product
     {
         $connect = Db::getConnection();
 
-        $result = $connect->prepare('SELECT products.title as product, products.price as old_price, ROUND((products.price*products.discount)/100 , 2) as new_price, products.is_sale, products.is_new, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category WHERE categories.title = :category');
+        $result = $connect->prepare('SELECT products.title as product, products.price as old_price, ROUND((products.price*(100 - products.discount))/100 , 2) as new_price, products.is_sale, products.is_new, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category WHERE categories.title = :category');
         $result->bindParam(':category', $category, PDO::PARAM_STR);
         $result->execute();
         $products = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -114,8 +114,8 @@ class Product
         $id = intval($id);
 
         $connect = Db::getConnection();
-        $result = $connect->query('SELECT products.title as product, products.price as old_price, ROUND((products.price*products.discount)/100 , 2) as new_price, products.is_sale, products.is_new, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category WHERE products.id = ' . $id);
+        $result = $connect->query('SELECT products.id, categories.title as category, products.title as product, products.price as old_price, ROUND((products.price*(100 - products.discount))/100 , 2) as new_price, products.is_sale, products.is_new, products.description, products.additional_information, images.url FROM products JOIN images ON images.id_products = products.id JOIN categories ON categories.id = products.id_category WHERE products.id = ' . $id);
 
-        return $result->fetch(PDO::FETCH_ASSOC);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 }

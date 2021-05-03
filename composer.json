@@ -12,7 +12,8 @@
   "minimum-stability" : "dev",
   "autoload": {
     "psr-4": {
-      "App\\" : "./app"
+      "App\\" : "./app",
+      "Helpers\\" : "./helpers"
     },
     "files": [
       "helpers/helpers.php"

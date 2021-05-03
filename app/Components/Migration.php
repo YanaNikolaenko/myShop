@@ -8,13 +8,14 @@ use Exception;
 class Migration
 {
     protected $con;
-    //protected $config;
 
 
     public function __construct()
     {
         $this->con = (new Db)->getConnection();
-        //$this->config = include('helpers\helpers.php');
+
+        //это костыль, потому что композер автозагружает колбэки только из классов, а конфиг(), который я использую, находится не в классе
+        require(dirname(\Composer\Factory::getComposerFile()) . '/helpers/helpers.php');
     }
 
 

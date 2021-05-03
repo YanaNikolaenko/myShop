@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
+use App\Models\Category;
+use App\Models\Product;
 
 /**
  * Class CatalogController
@@ -23,11 +25,11 @@ class CatalogController
      */
     public function index()
     {
-        //$sliders=Slider::all();
-        //require VIEW_ROOT . "slider/list.php";
-
-
-
+        $productsForCatalog=Product::selectAllProducts();
+        $categories=Category::all();
+//        echo "<pre>";
+//        var_dump($productsForCatalog[0]['url']);
+//        echo "</pre>";
         require VIEW_ROOT . "catalog/catalog.php";
     }
 

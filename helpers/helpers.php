@@ -1,5 +1,6 @@
 <?php
 
+
     function config(string $params): string
     {
         $segments = explode('.', $params);

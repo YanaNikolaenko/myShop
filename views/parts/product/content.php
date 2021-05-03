@@ -16,7 +16,7 @@
     </a>
 
     <span class="s-text17">
-			Boxy T-Shirt with Roll Sleeve Detail
+			<?=$product[0]['product']?>
 		</span>
 </div>
 
@@ -28,38 +28,28 @@
                 <div class="wrap-slick3-dots"></div>
 
                 <div class="slick3">
-                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT?>images/women/25659413-1.jpg">
+                    <?php foreach ($product as $one): ?>
+                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT . $one['url']?>">
                         <div class="wrap-pic-w">
-                            <img src="<?=TEMPLATE_ROOT?>images/women/25659413-1.jpg" alt="IMG-PRODUCT">
+                            <img src="<?=TEMPLATE_ROOT . $one['url']?>" alt="IMG-PRODUCT">
                         </div>
                     </div>
-
-                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT?>images/women/25659413-4.jpg">
-                        <div class="wrap-pic-w">
-                            <img src="<?=TEMPLATE_ROOT?>images/women/25659413-4.jpg" alt="IMG-PRODUCT">
-                        </div>
-                    </div>
-
-                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT?>images/women/25659413-6.jpg">
-                        <div class="wrap-pic-w">
-                            <img src="<?=TEMPLATE_ROOT?>images/women/25659413-6.jpg" alt="IMG-PRODUCT">
-                        </div>
-                    </div>
+                    <? endforeach ?>
                 </div>
             </div>
         </div>
 
         <div class="w-size14 p-t-30 respon5">
             <h4 class="product-detail-name m-text16 p-b-13">
-                Boxy T-Shirt with Roll Sleeve Detail
+                <?=$product[0]['product']?>
             </h4>
 
             <span class="m-text17">
-					$22
+					<?=$product[0]['new_price']?>
 				</span>
 
             <p class="s-text8 p-t-10">
-                Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+                <?=$product[0]['description']?>
             </p>
 
             <!--  -->
@@ -121,8 +111,8 @@
             </div>
 
             <div class="p-b-45">
-                <span class="s-text8 m-r-35">SKU: MUG-01</span>
-                <span class="s-text8">Categories: Mug, Design</span>
+                <span class="s-text8 m-r-35">SKU: <?=$product[0]['id']?></span>
+                <span class="s-text8">Categories: <?=$product[0]['category']?></span>
             </div>
 
             <!--  -->
@@ -135,7 +125,7 @@
 
                 <div class="dropdown-content dis-none p-t-15 p-b-23">
                     <p class="s-text8">
-                        Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
+                        <?=$product[0]['description']?>
                     </p>
                 </div>
             </div>
@@ -149,7 +139,7 @@
 
                 <div class="dropdown-content dis-none p-t-15 p-b-23">
                     <p class="s-text8">
-                        Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
+                        <?=$product[0]['additional_information']?>
                     </p>
                 </div>
             </div>

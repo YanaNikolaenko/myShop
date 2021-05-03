@@ -11,13 +11,13 @@ class AddColors extends Migration
 {
     public static function AddColors ()
     {
-        Color::create('blue', '#00bbec');
-        Color::create('dark blue', '#2c6ed5');
-        Color::create('orange', '#ffa037');
-        Color::create('tomato', '#ff5337');
-        Color::create('olivedrab', '#569b42');
-        Color::create('dark grey', '#393939');
-        Color::create('grey', '#cccccc');
+        Color::create('Blue', '#00bbec');
+        Color::create('Dark blue', '#2c6ed5');
+        Color::create('Orange', '#ffa037');
+        Color::create('Tomato', '#ff5337');
+        Color::create('Olivedrab', '#569b42');
+        Color::create('Dark grey', '#393939');
+        Color::create('Grey', '#cccccc');
         echo "Colors added successfully<br>";
     }
 
