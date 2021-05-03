@@ -44,7 +44,6 @@
     "seed-color-product": "App\\Seeds\\AddColorProduct::AddColorProduct",
 
     "migrate": [
-      "@composer delete-all-tables",
       "@composer create-user-table",
       "@composer update-user-table",
       "@composer create-slider-table",

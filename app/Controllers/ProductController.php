@@ -12,14 +12,10 @@ class ProductController
     {
         $product = Product::getProductById(6);
 
-//        echo "<pre>";
-//var_dump($product);
-//        echo "</pre>";
-
         require VIEW_ROOT . "product/product.php";
     }
 
-    public function allAjax ()
+    public function allAjax()
     {
         //return json_encode(Product::all());
     }

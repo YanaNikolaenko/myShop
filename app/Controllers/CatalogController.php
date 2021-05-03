@@ -28,7 +28,7 @@ class CatalogController
         $productsForCatalog=Product::selectAllProducts();
         $categories=Category::all();
 //        echo "<pre>";
-//        var_dump($productsForCatalog[0]['url']);
+//        var_dump($productsForCatalog);die;
 //        echo "</pre>";
         require VIEW_ROOT . "catalog/catalog.php";
     }

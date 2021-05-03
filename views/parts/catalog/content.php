@@ -154,7 +154,14 @@
                     <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                         <!-- Block2 -->
                         <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
+
+
+                                <div class="block2-labelsale"></div>
+
+                                <div class="block2-labelnew"></div>
+
+
                                 <img src="<?= TEMPLATE_ROOT?><?=$product['url']?>" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
