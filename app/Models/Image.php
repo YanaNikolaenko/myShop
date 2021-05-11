@@ -37,4 +37,14 @@ class Image
         $result->bindParam(':id_products', $id_products, PDO::PARAM_INT);
         return $result->execute();
     }
+
+    //////////////////////// ЭТУ ФУНКЦИЮ ЕЩЕ НУЖНО ДОДЕЛАТЬ
+
+    public static function getByIdProduct(int $id)
+    {
+        $connect = Db::getConnection();
+        $results = $connect->query("SELECT url FROM `images` WHERE id_products = $id");
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
