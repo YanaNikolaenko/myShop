@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Product</title>
+    <title>Contact</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -26,8 +26,6 @@
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/select2/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/slick/slick.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>vendor/noui/nouislider.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/util.css">
     <link rel="stylesheet" type="text/css" href="<?=TEMPLATE_ROOT?>css/main.css">
@@ -68,7 +66,7 @@
 
         <div class="wrap_header">
             <!-- Logo -->
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
@@ -77,36 +75,36 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="/">Home</a>
                             <ul class="sub_menu">
-                                <li><a href="index.html">Homepage V1</a></li>
-                                <li><a href="home-02.html">Homepage V2</a></li>
-                                <li><a href="home-03.html">Homepage V3</a></li>
+                                <li><a href="/">Homepage V1</a></li>
+                                <li><a href="/">Homepage V2</a></li>
+                                <li><a href="/">Homepage V3</a></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="product.html">Shop</a>
+                            <a href="/catalog">Shop</a>
                         </li>
 
                         <li class="sale-noti">
-                            <a href="product.html">Sale</a>
+                            <a href="/sale">Sale</a>
                         </li>
 
                         <li>
-                            <a href="cart.html">Features</a>
+                            <a href="/cart">Cart</a>
                         </li>
 
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="/blog">Blog</a>
                         </li>
 
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="/about">About</a>
                         </li>
 
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="/contact">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -204,7 +202,7 @@
     <!-- Header Mobile -->
     <div class="wrap_header_mobile">
         <!-- Logo moblie -->
-        <a href="index.html" class="logo-mobile">
+        <a href="/" class="logo-mobile">
             <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
@@ -281,7 +279,7 @@
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="/cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -341,37 +339,37 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                     <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
+                        <li><a href="/">Homepage V1</a></li>
+                        <li><a href="/">Homepage V2</a></li>
+                        <li><a href="/">Homepage V3</a></li>
                     </ul>
                     <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
+                    <a href="/catalog">Shop</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
+                    <a href="/sale">Sale</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
+                    <a href="/cart">Cart</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
+                    <a href="/about">About</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
+                    <a href="/contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -379,11 +377,8 @@
 </header>
 
 <!-- Title Page -->
-<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?=TEMPLATE_ROOT?>images/heading-pages-02.jpg);">
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(<?=TEMPLATE_ROOT?>images/heading-pages-06.jpg);">
     <h2 class="l-text2 t-center">
-        Women
+        Contact
     </h2>
-    <p class="m-text13 t-center">
-        New Arrivals Women Collection 2018
-    </p>
 </section>

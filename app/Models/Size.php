@@ -34,4 +34,19 @@ class Size
         return $result->execute();
     }
 
+    public static function getByIdProduct(string $id) : array
+    {
+        $id = intval($id);
+        $connect = Db::getConnection();
+        $sizes = $connect->query("SELECT sizes.title FROM `sizes` JOIN product_size ON product_size.id_sizes = sizes.id WHERE product_size.id_products = $id");
+        $result = array();
+        $i = 0;
+        foreach ($sizes->fetchAll(PDO::FETCH_ASSOC) as $size)
+        {
+            $result[$i] = $size['title'];
+            $i++;
+        }
+        return $result;
+    }
+
 }

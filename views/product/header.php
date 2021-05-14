@@ -68,7 +68,7 @@
 
         <div class="wrap_header">
             <!-- Logo -->
-            <a href="index.html" class="logo">
+            <a href="../../index.php" class="logo">
                 <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
@@ -77,36 +77,36 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="../../index.php">Home</a>
                             <ul class="sub_menu">
-                                <li><a href="index.html">Homepage V1</a></li>
-                                <li><a href="home-02.html">Homepage V2</a></li>
-                                <li><a href="home-03.html">Homepage V3</a></li>
+                                <li><a href="../../index.php">Homepage V1</a></li>
+                                <li><a href="../../index.php">Homepage V2</a></li>
+                                <li><a href="../../index.php">Homepage V3</a></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="product.html">Shop</a>
+                            <a href="../../index.php">Shop</a>
                         </li>
 
                         <li class="sale-noti">
-                            <a href="product.html">Sale</a>
+                            <a href="../../index.php">Sale</a>
                         </li>
 
                         <li>
-                            <a href="cart.html">Features</a>
+                            <a href="../../index.php">Features</a>
                         </li>
 
                         <li>
-                            <a href="blog.html">Blog</a>
+                            <a href="../../index.php">Blog</a>
                         </li>
 
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="../../index.php">About</a>
                         </li>
 
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="../../index.php">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -183,7 +183,7 @@
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -204,7 +204,7 @@
     <!-- Header Mobile -->
     <div class="wrap_header_mobile">
         <!-- Logo moblie -->
-        <a href="index.html" class="logo-mobile">
+        <a href="../../index.php" class="logo-mobile">
             <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
@@ -281,7 +281,7 @@
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -341,37 +341,37 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
+                    <a href="../../index.php">Home</a>
                     <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
+                        <li><a href="../../index.php">Homepage V1</a></li>
+                        <li><a href="../../index.php">Homepage V2</a></li>
+                        <li><a href="../../index.php">Homepage V3</a></li>
                     </ul>
                     <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
+                    <a href="../../index.php">Shop</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
+                    <a href="../../index.php">Sale</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
+                    <a href="../../index.php">Features</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
+                    <a href="../../index.php">Blog</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
+                    <a href="../../index.php">About</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
+                    <a href="../../index.php">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -381,7 +381,7 @@
 <!-- Title Page -->
 <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?=TEMPLATE_ROOT?>images/heading-pages-02.jpg);">
     <h2 class="l-text2 t-center">
-        Catalog
+        Women
     </h2>
     <p class="m-text13 t-center">
         New Arrivals Women Collection 2018

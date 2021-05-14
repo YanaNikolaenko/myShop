@@ -9,6 +9,15 @@ return array (
     'user' => 'user/list',
     'access-denied'=>'server/accessDenied',
     'catalog' => 'catalog/index',
+
+
+    'catalog/' => 'catalog/categoryAjax',
+
+
     'product' => 'product/product',
+    'cart' => 'cart/index',
+    'blog' => 'blog/index',
+    'about' => 'about/index',
+    'contact' => 'contact/index',
     '' => 'home/index'
 );

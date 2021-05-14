@@ -36,7 +36,7 @@ class AuthController
                 if (empty($errors)) {
                     if (User::create($firstname, $lastname, $email, $password, $phone))
                     {
-                        $user = User::selectByEmail($email);//выбираю данные по email (поле unique)
+                        $user = User::getByEmail($email);//выбираю данные по email (поле unique)
                         Session::set('email', $user['email']);
                         header('Location: profile');//сразу перенаправляю в созданный профиль
                     }

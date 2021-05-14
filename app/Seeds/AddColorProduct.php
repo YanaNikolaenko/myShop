@@ -15,6 +15,7 @@ class AddColorProduct extends Migration
         for ($i=1; $i<=52; $i++)
         {
             ColorProduct::create($i, rand(1, 7));
+            ColorProduct::create($i, rand(1, 7));
         }
     }
 

@@ -25,13 +25,15 @@ class CatalogController
      */
     public function index()
     {
-        $productsForCatalog=Product::selectAllProducts();
+        $products=Product::all();
         $categories=Category::all();
-//        echo "<pre>";
-//        var_dump($productsForCatalog);die;
-//        echo "</pre>";
-        require VIEW_ROOT . "catalog/catalog.php";
+
+        require VIEW_ROOT . "parts/catalog/catalog.php";
     }
 
 
+    public function categoryAjax($category)
+    {
+        return json_encode(Product::getProductsByCategory($category));
+    }
 }

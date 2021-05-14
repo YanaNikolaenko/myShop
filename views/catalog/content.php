@@ -12,7 +12,7 @@
                     <ul class="p-b-54">
                     <?php foreach ($categories as $category): ?>
                         <li class="p-t-4">
-                            <a href="#" class="s-text13 active1">
+                            <a href="/catalog/<?= lcfirst($category['title']) ?>" class="s-text13 active1">
                                 <?= $category['title'] ?>
                             </a>
                         </li>
@@ -149,20 +149,24 @@
                 <!-- Product -->
                 <div class="row">
 
-                <?php foreach ($productsForCatalog as $product): ?>
+                <?php foreach ($products as $product): ?>
 
                     <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-
-
+                                <?php
+                                if ($product['is_sale'] == 1 && $product['is_new'] == 0):?>
                                 <div class="block2-labelsale"></div>
-
+                                <?elseif ($product['is_sale'] == 0 && $product['is_new'] == 1):?>
                                 <div class="block2-labelnew"></div>
+                                <?elseif ($product['is_sale'] == 1 && $product['is_new'] == 1):?>
+                                <div class="block2-labelnew"></div>
+                                <div class="block2-labelsale" style="position: absolute; top: 30px;"></div>
+                                <?endif;
+                                ?>
 
-
-                                <img src="<?= TEMPLATE_ROOT?><?=$product['url']?>" alt="IMG-PRODUCT">
+                                <img src="<?= TEMPLATE_ROOT?><?=$product['images'][0]?>" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -180,17 +184,25 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
-                                    <?= $product['product'] ?>
+                                <a href="/product/<?= $product['id'] ?>" class="block2-name dis-block s-text3 p-b-5">
+                                    <?= $product['title'] ?>
                                 </a>
 
-                                <span class="block2-oldprice m-text7 p-r-5">
-										<?= $product['old_price'] ?>
-									</span>
 
-                                <span class="block2-newprice m-text8 p-r-5">
+                                <?php
+                                if ($product['price'] == $product['new_price']):?>
+                                    <span class="block2-newprice m-text8 p-r-5" style="color: black">
+                                    <?= $product['price'] ?>
+									</span>
+                                <?else:?>
+                                    <span class="block2-oldprice m-text7 p-r-5">
+										<?= $product['price'] ?>
+									</span>
+                                    <span class="block2-newprice m-text8 p-r-5">
 										<?= $product['new_price'] ?>
 									</span>
+                                <?endif;
+                                ?>
                             </div>
                         </div>
                     </div>

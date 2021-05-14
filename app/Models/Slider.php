@@ -40,7 +40,7 @@ class Slider
 
     }
 
-    public static function selectById($id)
+    public static function getById($id)
     {
         $connect = Db::getConnection();
 

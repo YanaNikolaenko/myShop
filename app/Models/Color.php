@@ -38,5 +38,18 @@ class Color
         return $result->execute();
     }
 
-
+    public static function getByIdProduct(string $id) : array
+    {
+        $id = intval($id);
+        $connect = Db::getConnection();
+        $colors = $connect->query("SELECT colors.title as `title`, colors.hex as `hex` FROM `colors` JOIN color_product ON color_product.id_colors = colors.id WHERE color_product.id_products = $id");
+        $result = array();
+        $i = 0;
+        foreach ($colors->fetchAll(PDO::FETCH_ASSOC) as $color)
+        {
+            $result[$i] = $color['title'];
+            $i++;
+        }
+        return $result;
+    }
 }

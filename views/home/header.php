@@ -45,7 +45,7 @@
 <!-- header fixed -->
 <div class="wrap_header fixed-header2 trans-0-4">
     <!-- Logo -->
-    <a href="../../../index.php" class="logo">
+    <a href="/" class="logo">
         <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
     </a>
 
@@ -54,36 +54,36 @@
         <nav class="menu">
             <ul class="main_menu">
                 <li>
-                    <a href="../../../index.php">Home</a>
+                    <a href="/">Home</a>
                     <ul class="sub_menu">
-                        <li><a href="../../../index.php">Homepage V1</a></li>
-                        <li><a href="../../../index.php">Homepage V2</a></li>
-                        <li><a href="../../../index.php">Homepage V3</a></li>
+                        <li><a href="/">Homepage V1</a></li>
+                        <li><a href="/">Homepage V2</a></li>
+                        <li><a href="/">Homepage V3</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="../../../index.php">Shop</a>
+                    <a href="/catalog">Shop</a>
                 </li>
 
                 <li class="sale-noti">
-                    <a href="../../../index.php">Sale</a>
+                    <a href="/sale">Sale</a>
                 </li>
 
                 <li>
-                    <a href="../../../index.php">Features</a>
+                    <a href="/cart">Cart</a>
                 </li>
 
                 <li>
-                    <a href="../../../index.php">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
 
                 <li>
-                    <a href="../../../index.php">About</a>
+                    <a href="/about">About</a>
                 </li>
 
                 <li>
-                    <a href="../../../index.php">Contact</a>
+                    <a href="/contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -97,7 +97,7 @@
             <!-- Header cart noti -->
             <!--первая форма залогиниться-->
             <div class="header-cart header-dropdown">
-                <form class="leave-comment" action="../../../index.php" method="post">
+                <form class="leave-comment" action="../../index.php" method="post">
                     <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                         Enter email and password
                     </div>
@@ -128,7 +128,7 @@
             </div>
             <!--форма регистрации-->
             <div class="header-cart header-dropdown2">
-                <form class="leave-comment" action="../../../index.php" method="post">
+                <form class="leave-comment" action="../../index.php" method="post">
                     <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                         Fill in all the form fields
                     </div>
@@ -237,7 +237,7 @@
                 <div class="header-cart-buttons">
                     <div class="header-cart-wrapbtn">
                         <!-- Button -->
-                        <a href="../../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                        <a href="../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                             View Cart
                         </a>
                     </div>
@@ -257,7 +257,7 @@
 <!-- top noti -->
 <div class="flex-c-m size22 bg0 s-text21 pos-relative">
     20% off everything!
-    <a href="../../../index.php" class="s-text22 hov6 p-l-5">
+    <a href="../../index.php" class="s-text22 hov6 p-l-5">
         Shop Now
     </a>
 
@@ -280,7 +280,7 @@
             </div>
 
             <!-- Logo2 -->
-            <a href="../../../index.php" class="logo2">
+            <a href="/" class="logo2">
                 <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
@@ -302,7 +302,7 @@
                     <!-- Header cart noti -->
                     <!--первая форма залогиниться-->
                     <div class="header-cart header-dropdown">
-                        <form class="leave-comment" action="../../../index.php" method="post">
+                        <form class="leave-comment" action="../../index.php" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Enter email and password
                             </div>
@@ -333,7 +333,7 @@
                     </div>
                     <!--форма регистрации-->
                     <div class="header-cart header-dropdown2">
-                        <form class="leave-comment" action="../../../index.php" method="post">
+                        <form class="leave-comment" action="../../index.php" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Fill in all the form fields
                             </div>
@@ -445,7 +445,7 @@
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="../../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -490,36 +490,36 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="../../../index.php">Home</a>
+                            <a href="/">Home</a>
                             <ul class="sub_menu">
-                                <li><a href="../../../index.php">Homepage V1</a></li>
-                                <li><a href="../../../index.php">Homepage V2</a></li>
-                                <li><a href="../../../index.php">Homepage V3</a></li>
+                                <li><a href="/">Homepage V1</a></li>
+                                <li><a href="/">Homepage V2</a></li>
+                                <li><a href="/">Homepage V3</a></li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="../../../index.php">Shop</a>
+                            <a href="/catalog">Shop</a>
                         </li>
 
                         <li class="sale-noti">
-                            <a href="../../../index.php">Sale</a>
+                            <a href="/sale">Sale</a>
                         </li>
 
                         <li>
-                            <a href="../../../index.php">Features</a>
+                            <a href="/cart">Cart</a>
                         </li>
 
                         <li>
-                            <a href="../../../index.php">Blog</a>
+                            <a href="/blog">Blog</a>
                         </li>
 
                         <li>
-                            <a href="../../../index.php">About</a>
+                            <a href="/about">About</a>
                         </li>
 
                         <li>
-                            <a href="../../../index.php">Contact</a>
+                            <a href="/contact">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -535,7 +535,7 @@
     <!-- Header Mobile -->
     <div class="wrap_header_mobile">
         <!-- Logo moblie -->
-        <a href="../../../index.php" class="logo-mobile">
+        <a href="/" class="logo-mobile">
             <img src="<?=TEMPLATE_ROOT?>images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
@@ -549,7 +549,7 @@
                     <!-- Header cart noti -->
                     <!--первая форма залогиниться-->
                     <div class="header-cart header-dropdown">
-                        <form class="leave-comment" action="../../../index.php" method="post">
+                        <form class="leave-comment" action="../../index.php" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Enter email and password
                             </div>
@@ -580,7 +580,7 @@
                     </div>
                     <!--форма регистрации-->
                     <div class="header-cart header-dropdown2">
-                        <form class="leave-comment" action="../../../index.php" method="post">
+                        <form class="leave-comment" action="../../index.php" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Fill in all the form fields
                             </div>
@@ -689,7 +689,7 @@
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="../../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="../../index.php" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -749,37 +749,37 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Home</a>
+                    <a href="/">Home</a>
                     <ul class="sub-menu">
-                        <li><a href="../../../index.php">Homepage V1</a></li>
-                        <li><a href="../../../index.php">Homepage V2</a></li>
-                        <li><a href="../../../index.php">Homepage V3</a></li>
+                        <li><a href="/">Homepage V1</a></li>
+                        <li><a href="/">Homepage V2</a></li>
+                        <li><a href="/">Homepage V3</a></li>
                     </ul>
                     <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Shop</a>
+                    <a href="/catalog">Shop</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Sale</a>
+                    <a href="/sale">Sale</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Features</a>
+                    <a href="/cart">Cart</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">About</a>
+                    <a href="/about">About</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="../../../index.php">Contact</a>
+                    <a href="/contact">Contact</a>
                 </li>
             </ul>
         </nav>

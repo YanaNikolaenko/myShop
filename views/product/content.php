@@ -1,22 +1,24 @@
 <!-- breadcrumb -->
 <div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
-    <a href="../../../index.php" class="s-text16">
+    <a href="../../index.php" class="s-text16">
         Home
         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
     </a>
 
-    <a href="../../../index.php" class="s-text16">
-        Women
+    <a href="../../index.php" class="s-text16">
+        <?=$product['category']?>
         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
     </a>
 
-    <a href="#" class="s-text16">
-        T-Shirt
-        <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
-    </a>
+
+    <!-- /////////////углубление дерева каталога если есть (например, women - T-shirts - товар). У меня women - товар.
+    -    <a href="#" class="s-text16">
+         T-Shirt
+         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
+     </a>-->
 
     <span class="s-text17">
-			<?=$product[0]['product']?>
+			<?=$product['title']?>
 		</span>
 </div>
 
@@ -28,10 +30,10 @@
                 <div class="wrap-slick3-dots"></div>
 
                 <div class="slick3">
-                    <?php foreach ($product as $one): ?>
-                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT . $one['url']?>">
+                    <?php foreach ($product['images'] as $image): ?>
+                    <div class="item-slick3" data-thumb="<?=TEMPLATE_ROOT . $image?>">
                         <div class="wrap-pic-w">
-                            <img src="<?=TEMPLATE_ROOT . $one['url']?>" alt="IMG-PRODUCT">
+                            <img src="<?=TEMPLATE_ROOT . $image?>" alt="IMG-PRODUCT">
                         </div>
                     </div>
                     <? endforeach ?>
@@ -41,15 +43,17 @@
 
         <div class="w-size14 p-t-30 respon5">
             <h4 class="product-detail-name m-text16 p-b-13">
-                <?=$product[0]['product']?>
+                <?=$product['title']?>
             </h4>
 
-            <span class="m-text17">
-					<?=$product[0]['new_price']?>
-				</span>
+
+            <span class="m-text17" style="text-decoration: line-through"><?=$product['price']?> </span>
+
+
+            <span class="m-text17" style="color: #e65540">&nbsp&nbsp<?=$product['new_price']?></span>
 
             <p class="s-text8 p-t-10">
-                <?=$product[0]['description']?>
+                <?=$product['description']?>
             </p>
 
             <!--  -->
@@ -62,10 +66,9 @@
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
                         <select class="selection-2" name="size">
                             <option>Choose an option</option>
-                            <option>Size S</option>
-                            <option>Size M</option>
-                            <option>Size L</option>
-                            <option>Size XL</option>
+                            <?php foreach ($product['sizes'] as $size): ?>
+                                <option><?=$size?></option>
+                            <? endforeach ?>
                         </select>
                     </div>
                 </div>
@@ -76,13 +79,13 @@
                     </div>
 
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-                        <select class="selection-2" name="color">
+                        <select class="selection-2" name="size">
                             <option>Choose an option</option>
-                            <option>Gray</option>
-                            <option>Red</option>
-                            <option>Black</option>
-                            <option>Blue</option>
+                            <?php foreach ($product['colors'] as $color): ?>
+                                <option><?=$color?></option>
+                            <? endforeach ?>
                         </select>
+
                     </div>
                 </div>
 
@@ -111,8 +114,8 @@
             </div>
 
             <div class="p-b-45">
-                <span class="s-text8 m-r-35">SKU: <?=$product[0]['id']?></span>
-                <span class="s-text8">Categories: <?=$product[0]['category']?></span>
+                <span class="s-text8 m-r-35">SKU: <?=$product['id']?></span>
+                <span class="s-text8">Categories: <?=$product['category']?></span>
             </div>
 
             <!--  -->
@@ -125,7 +128,7 @@
 
                 <div class="dropdown-content dis-none p-t-15 p-b-23">
                     <p class="s-text8">
-                        <?=$product[0]['description']?>
+                        <?=$product['description']?>
                     </p>
                 </div>
             </div>
@@ -139,7 +142,7 @@
 
                 <div class="dropdown-content dis-none p-t-15 p-b-23">
                     <p class="s-text8">
-                        <?=$product[0]['additional_information']?>
+                        <?=$product['additional_information']?>
                     </p>
                 </div>
             </div>
@@ -197,7 +200,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Herschel supply co 25l
                             </a>
 
@@ -230,7 +233,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Denim jacket blue
                             </a>
 
@@ -263,7 +266,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Coach slim easton black
                             </a>
 
@@ -296,7 +299,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Frayed denim shorts
                             </a>
 
@@ -333,7 +336,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Herschel supply co 25l
                             </a>
 
@@ -366,7 +369,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Denim jacket blue
                             </a>
 
@@ -399,7 +402,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Coach slim easton black
                             </a>
 
@@ -432,7 +435,7 @@
                         </div>
 
                         <div class="block2-txt p-t-20">
-                            <a href="../../../index.php" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="../../index.php" class="block2-name dis-block s-text3 p-b-5">
                                 Frayed denim shorts
                             </a>
 

@@ -32,6 +32,12 @@
     "create-sizes-table": "App\\Migrations\\CreateSizesTable::up",
     "create-products_sizes-table": "App\\Migrations\\CreateProductSizeTable::up",
 
+    "create-authors-table": "App\\Migrations\\CreateAuthorsTable::up",
+    "create-blog-categories-table": "App\\Migrations\\CreateBlogCategoriesTable::up",
+    "create-articles-table": "App\\Migrations\\CreateArticlesTable::up",
+    "create-commentators-table": "App\\Migrations\\CreateCommentatorsTable::up",
+    "create-comments-table": "App\\Migrations\\CreateCommentsTable::up",
+
     "seed-users": "App\\Seeds\\AddUsers::AddUsers",
     "seed-slider": "App\\Seeds\\AddSlider::AddSlider",
     "seed-categories": "App\\Seeds\\AddCategories::AddCategories",
@@ -41,6 +47,10 @@
     "seed-images": "App\\Seeds\\AddImages::AddImages",
     "seed-product-size": "App\\Seeds\\AddProductSize::AddProductSize",
     "seed-color-product": "App\\Seeds\\AddColorProduct::AddColorProduct",
+
+    "seed-blog-categories": "App\\Seeds\\AddBlogCategories::AddBlogCategories",
+    "seed-authors": "App\\Seeds\\AddAuthors::AddAuthors",
+    "seed-articles": "App\\Seeds\\AddArticles::AddArticles",
 
     "migrate": [
       "@composer delete-all-tables",
@@ -53,7 +63,12 @@
       "@composer create-colors-table",
       "@composer create-color_product-table",
       "@composer create-sizes-table",
-      "@composer create-products_sizes-table"
+      "@composer create-products_sizes-table",
+      "@composer create-authors-table",
+      "@composer create-blog-categories-table",
+      "@composer create-articles-table",
+      "@composer create-commentators-table",
+      "@composer create-comments-table"
     ],
     "seed": [
       "@composer seed-users",
@@ -64,7 +79,10 @@
       "@composer seed-products",
       "@composer seed-images",
       "@composer seed-product-size",
-      "@composer seed-color-product"
+      "@composer seed-color-product",
+      "@composer seed-blog-categories",
+      "@composer seed-authors",
+      "@composer seed-articles"
     ]
   }
 }

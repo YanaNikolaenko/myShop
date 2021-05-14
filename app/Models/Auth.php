@@ -20,6 +20,6 @@ class Auth
 
     public static function getUser()
     {
-        return User::selectByEmail(Session::get('email'));
+        return User::getByEmail(Session::get('email'));
     }
 }

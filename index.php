@@ -9,7 +9,12 @@ $router = new Router();
 $router->run();
 
 use App\Models\Image;
+use App\Models\Size;
+use App\Models\Color;
+use App\Models\Product;
 
-echo "<pre>";
-var_dump(Image::getByIdProduct(1));
-echo "</pre>";
+//
+//echo "<pre>";
+//var_dump(Product::getByCategory('women'));
+//echo "</pre>";
+

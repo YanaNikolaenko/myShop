@@ -24,12 +24,9 @@ class HomeController
      */
     public function index()
     {
-        //require VIEW_ROOT . "slider/list.php";
-
-
         $sliders=Slider::all();
 
-        require VIEW_ROOT . "home/index.php";
+        require VIEW_ROOT . "parts/home/index.php";
     }
 
 

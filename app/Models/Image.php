@@ -38,13 +38,22 @@ class Image
         return $result->execute();
     }
 
-    //////////////////////// ЭТУ ФУНКЦИЮ ЕЩЕ НУЖНО ДОДЕЛАТЬ
-
-    public static function getByIdProduct(int $id)
+    /**
+     * @param string $id
+     * @return array
+     */
+    public static function getByIdProduct(string $id) : array
     {
+        $id = intval($id);
         $connect = Db::getConnection();
-        $results = $connect->query("SELECT url FROM `images` WHERE id_products = $id");
-
-        return $results->fetchAll(PDO::FETCH_ASSOC);
+        $images = $connect->query("SELECT url FROM `images` WHERE id_products = $id");
+        $result = array();
+        $i = 0;
+        foreach ($images->fetchAll(PDO::FETCH_ASSOC) as $image)
+        {
+            $result[$i] = $image['url'];
+            $i++;
+        }
+        return $result;
     }
 }

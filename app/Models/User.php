@@ -81,7 +81,7 @@ class User
     {
         $connect = Db::getConnection();
 
-        $user = User::selectByEmail($email);
+        $user = User::getByEmail($email);
 
         $sql = 'UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email, password = :password, phone = :phone WHERE id = :user_id;';
         $result = $connect->prepare($sql);
@@ -100,7 +100,7 @@ class User
      * @param $email
      * @return mixed
      */
-    public static function selectByEmail($email)
+    public static function getByEmail($email)
     {
         $connect = Db::getConnection();
 

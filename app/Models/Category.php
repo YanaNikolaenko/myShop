@@ -41,10 +41,10 @@ class Category
      * @param $id
      * @return mixed
      */
-    public static function selectCategoryById($id)
+    public static function getById($id)
     {
         $connect = Db::getConnection();
-        $results = $connect->query("SELECT title, description FROM categories WHERE id = $id");
+        $results = $connect->query("SELECT * FROM categories WHERE id = $id");
         return $results->fetch(PDO::FETCH_ASSOC);
     }
 
