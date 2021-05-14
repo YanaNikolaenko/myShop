@@ -5,225 +5,51 @@
         <div class="row">
             <div class="col-md-8 col-lg-9 p-b-75">
                 <div class="p-r-50 p-r-0-lg">
+                    <?php foreach ($articles as $article): ?>
                     <!-- item blog -->
                     <div class="item-blog p-b-80">
-                        <a href="../../index.php" class="item-blog-img pos-relative dis-block hov-img-zoom">
-                            <img src="<?=TEMPLATE_ROOT?>images/blog-04.jpg" alt="IMG-BLOG">
+                        <a href="/article/<?=$article['id']?>" class="item-blog-img pos-relative dis-block hov-img-zoom">
+                            <img src="<?=TEMPLATE_ROOT . $article['image']?>" alt="IMG-BLOG">
 
                             <span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									28 Dec, 2018
+									<?=$article['date']?>
 								</span>
                         </a>
 
                         <div class="item-blog-txt p-t-33">
                             <h4 class="p-b-11">
-                                <a href="../../index.php" class="m-text24">
-                                    Black Friday Guide: Best Sales & Discount Codes
+                                <a href="/article/<?=$article['id']?>" class="m-text24">
+                                    <?=$article['title']?>
                                 </a>
                             </h4>
 
                             <div class="s-text8 flex-w flex-m p-b-21">
 									<span>
-										By Admin
+										By <?=$article['author']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
                                 <span>
-										Cooking, Food
+										<?=$article['category']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
                                 <span>
-										8 Comments
+										<?=$article['count_comments']?> Comments
 									</span>
                             </div>
 
                             <p class="p-b-12">
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+                                <?=$article['summary']?>
                             </p>
 
-                            <a href="../../index.php" class="s-text20">
+                            <a href="/article/<?=$article['id']?>" class="s-text20">
                                 Continue Reading
                                 <i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
-
-                    <!-- item blog -->
-                    <div class="item-blog p-b-80">
-                        <a href="../../index.php" class="item-blog-img pos-relative dis-block hov-img-zoom">
-                            <img src="<?=TEMPLATE_ROOT?>images/blog-05.jpg" alt="IMG-BLOG">
-
-                            <span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									26 Dec, 2018
-								</span>
-                        </a>
-
-                        <div class="item-blog-txt p-t-33">
-                            <h4 class="p-b-11">
-                                <a href="../../index.php" class="m-text24">
-                                    The White Sneakers Nearly Every Fashion Girls Own
-                                </a>
-                            </h4>
-
-                            <div class="s-text8 flex-w flex-m p-b-21">
-									<span>
-										By Admin
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										Fashion, Life style
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										8 Comments
-									</span>
-                            </div>
-
-                            <p class="p-b-12">
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-                            </p>
-
-                            <a href="../../index.php" class="s-text20">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- item blog -->
-                    <div class="item-blog p-b-80">
-                        <a href="../../index.php" class="item-blog-img pos-relative dis-block hov-img-zoom">
-                            <img src="<?=TEMPLATE_ROOT?>images/blog-08.jpg" alt="IMG-BLOG">
-
-                            <span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									22 Dec, 2018
-								</span>
-                        </a>
-
-                        <div class="item-blog-txt p-t-33">
-                            <h4 class="p-b-11">
-                                <a href="../../index.php" class="m-text24">
-                                    Black Friday Guide: Best Sales & Discount Codes
-                                </a>
-                            </h4>
-
-                            <div class="s-text8 flex-w flex-m p-b-21">
-									<span>
-										By Admin
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										Cooking, Food
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										8 Comments
-									</span>
-                            </div>
-
-                            <p class="p-b-12">
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-                            </p>
-
-                            <a href="../../index.php" class="s-text20">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- item blog -->
-                    <div class="item-blog p-b-80">
-                        <a href="../../index.php" class="item-blog-img pos-relative dis-block hov-img-zoom">
-                            <img src="<?=TEMPLATE_ROOT?>images/blog-02.jpg" alt="IMG-BLOG">
-
-                            <span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									18 Dec, 2018
-								</span>
-                        </a>
-
-                        <div class="item-blog-txt p-t-33">
-                            <h4 class="p-b-11">
-                                <a href="../../index.php" class="m-text24">
-                                    Black Friday Guide: Best Sales & Discount Codes
-                                </a>
-                            </h4>
-
-                            <div class="s-text8 flex-w flex-m p-b-21">
-									<span>
-										By Admin
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										Cooking, Food
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										8 Comments
-									</span>
-                            </div>
-
-                            <p class="p-b-12">
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-                            </p>
-
-                            <a href="../../index.php" class="s-text20">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- item blog -->
-                    <div class="item-blog p-b-80">
-                        <a href="../../index.php" class="item-blog-img pos-relative dis-block hov-img-zoom">
-                            <img src="<?=TEMPLATE_ROOT?>images/blog-03.jpg" alt="IMG-BLOG">
-
-                            <span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
-									16 Dec, 2018
-								</span>
-                        </a>
-
-                        <div class="item-blog-txt p-t-33">
-                            <h4 class="p-b-11">
-                                <a href="../../index.php" class="m-text24">
-                                    Black Friday Guide: Best Sales & Discount Codes
-                                </a>
-                            </h4>
-
-                            <div class="s-text8 flex-w flex-m p-b-21">
-									<span>
-										By Admin
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										Cooking, Food
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-                                <span>
-										8 Comments
-									</span>
-                            </div>
-
-                            <p class="p-b-12">
-                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-                            </p>
-
-                            <a href="../../index.php" class="s-text20">
-                                Continue Reading
-                                <i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <? endforeach ?>
                 </div>
 
                 <!-- Pagination -->
@@ -232,6 +58,9 @@
                     <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
                 </div>
             </div>
+
+
+
 
             <div class="col-md-4 col-lg-3 p-b-75">
                 <div class="rightbar">
@@ -250,35 +79,13 @@
                     </h4>
 
                     <ul>
+                        <?php foreach ($categories as $category): ?>
                         <li class="p-t-6 p-b-8 bo6">
                             <a href="#" class="s-text13 p-t-5 p-b-5">
-                                Fashion
+                                <?=$category['title']?>
                             </a>
                         </li>
-
-                        <li class="p-t-6 p-b-8 bo7">
-                            <a href="#" class="s-text13 p-t-5 p-b-5">
-                                Beauty
-                            </a>
-                        </li>
-
-                        <li class="p-t-6 p-b-8 bo7">
-                            <a href="#" class="s-text13 p-t-5 p-b-5">
-                                Street Style
-                            </a>
-                        </li>
-
-                        <li class="p-t-6 p-b-8 bo7">
-                            <a href="#" class="s-text13 p-t-5 p-b-5">
-                                Life Style
-                            </a>
-                        </li>
-
-                        <li class="p-t-6 p-b-8 bo7">
-                            <a href="#" class="s-text13 p-t-5 p-b-5">
-                                DIY & Crafts
-                            </a>
-                        </li>
+                        <? endforeach ?>
                     </ul>
 
                     <!-- Featured Products -->

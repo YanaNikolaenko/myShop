@@ -26,6 +26,12 @@ class BlogCategories
         return $result->execute();
     }
 
+    public static function getById($id) : array
+    {
+        $connect = Db::getConnection();
+        $results = $connect->query("SELECT title FROM blog_categories WHERE id = $id");
+        return $results->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 }

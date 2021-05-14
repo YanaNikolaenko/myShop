@@ -13,8 +13,8 @@ use App\Models\Size;
 use App\Models\Color;
 use App\Models\Product;
 
-//
+
 //echo "<pre>";
-//var_dump(Product::getByCategory('women'));
+//var_dump(\App\Models\Article::all());
 //echo "</pre>";
 

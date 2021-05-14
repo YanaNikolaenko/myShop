@@ -19,7 +19,7 @@ class CreateAuthorsTable extends Migration
         // sql to create table
         $sql = "CREATE TABLE `authors` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
- `name` char(255) NOT NULL,
+ `name` char(255) NOT NULL UNIQUE,
  PRIMARY KEY (`id`)
 )";
 

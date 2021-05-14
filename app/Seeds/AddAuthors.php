@@ -15,6 +15,10 @@ class AddAuthors extends Migration
         Authors::create('Igor');
         Authors::create('Anna');
         Authors::create('John1980');
+        Authors::create('Mike1990');
+        Authors::create('Nina');
+        Authors::create('Bob Marley');
+        Authors::create('Vasya1988');
         echo "Authors added successfully<br>";
     }
 

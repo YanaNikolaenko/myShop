@@ -17,6 +17,7 @@ class AddColorProduct extends Migration
             ColorProduct::create($i, rand(1, 7));
             ColorProduct::create($i, rand(1, 7));
         }
+        echo "ColorProduct added successfully<br>";
     }
 
 }

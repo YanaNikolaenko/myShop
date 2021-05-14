@@ -51,6 +51,8 @@
     "seed-blog-categories": "App\\Seeds\\AddBlogCategories::AddBlogCategories",
     "seed-authors": "App\\Seeds\\AddAuthors::AddAuthors",
     "seed-articles": "App\\Seeds\\AddArticles::AddArticles",
+    "seed-commentators": "App\\Seeds\\AddCommentators::AddCommentators",
+    "seed-comments": "App\\Seeds\\AddComments::AddComments",
 
     "migrate": [
       "@composer delete-all-tables",
@@ -82,7 +84,9 @@
       "@composer seed-color-product",
       "@composer seed-blog-categories",
       "@composer seed-authors",
-      "@composer seed-articles"
+      "@composer seed-articles",
+      "@composer seed-commentators",
+      "@composer seed-comments"
     ]
   }
 }

@@ -27,6 +27,11 @@ class Authors
         return $result->execute();
     }
 
-
+    public static function getById($id) : array
+    {
+        $connect = Db::getConnection();
+        $results = $connect->query("SELECT name FROM authors WHERE id = $id");
+        return $results->fetch(PDO::FETCH_ASSOC);
+    }
 
 }

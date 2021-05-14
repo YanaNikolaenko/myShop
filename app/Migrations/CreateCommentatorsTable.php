@@ -20,7 +20,7 @@ class CreateCommentatorsTable extends Migration
         $sql = "CREATE TABLE `commentators` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `name` char(255) NOT NULL,
- `email` char(255) NOT NULL,
+ `email` char(255) NOT NULL UNIQUE,
  PRIMARY KEY (`id`)
 )";
 
