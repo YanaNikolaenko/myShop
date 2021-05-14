@@ -27,8 +27,8 @@ class CreateArticlesTable extends Migration
  `id_category` int(10) NOT NULL,
  `id_author` int(10) NOT NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_category`) REFERENCES blog_categories (`id`),
- FOREIGN KEY (`id_author`) REFERENCES authors (`id`)
+ FOREIGN KEY (`id_category`) REFERENCES blog_categories (`id`) ON DELETE CASCADE,  
+ FOREIGN KEY (`id_author`) REFERENCES authors (`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('articles')) {

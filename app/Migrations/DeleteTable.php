@@ -11,7 +11,14 @@ class DeleteTable extends Migration
     public static function deleteAllTables()
     {
         $instance = new self();
-        $param = config('db_params.dbname');
+
+        try {
+            $param = config('db_params.dbname');
+        }
+        catch (\Exception $e)
+        {
+            echo $e->getMessage();
+        }
 
         $instance->con->query("DROP DATABASE " . $param . "; CREATE DATABASE " . $param . "; USE " . $param . ";");
     }

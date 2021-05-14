@@ -22,8 +22,8 @@ class CreateColorProductTable extends Migration
  `id_products` int NULL,
  `id_colors` int NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_colors`) REFERENCES `colors`(`id`),
- FOREIGN KEY (`id_products`) REFERENCES `products`(`id`)
+ FOREIGN KEY (`id_colors`) REFERENCES `colors`(`id`) ON DELETE CASCADE,
+ FOREIGN KEY (`id_products`) REFERENCES `products`(`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('color_product')) {

@@ -21,7 +21,7 @@ class Article
             $articles[$i]['title'] = $article['title'];
             $articles[$i]['summary'] = $article['summary'];
             $articles[$i]['content'] = $article['content'];
-            $articles[$i]['date'] = $article['date'];
+            //$articles[$i]['date'] = date($article['date']);
             $articles[$i]['image'] = $article['image'];
             $category = BlogCategories::getById($article['id_category']);
             $articles[$i]['category'] = $category['title'];
@@ -56,6 +56,7 @@ class Article
         $query = $connect->query("SELECT * FROM `articles` WHERE id = $id");
         $article = $query->fetch(PDO::FETCH_ASSOC);
         $category = BlogCategories::getById($article['id_category']);
+        //$article['date'] = date($article['date']);
         $article['category'] = $category['title'];
         $author = Authors::getById($article['id_author']);
         $article['author'] = $author['name'];

@@ -17,4 +17,3 @@ use App\Models\Product;
 //echo "<pre>";
 //var_dump(\App\Models\Article::all());
 //echo "</pre>";
-

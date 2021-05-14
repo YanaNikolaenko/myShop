@@ -22,7 +22,7 @@ class CreateImagesTable extends Migration
  `url` varchar(10000) NOT NULL,
  `id_products` int(10) NOT NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_products`) REFERENCES products (`id`)
+ FOREIGN KEY (`id_products`) REFERENCES products (`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('images')) {

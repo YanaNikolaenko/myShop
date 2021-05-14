@@ -23,8 +23,8 @@ class CreateCommentsTable extends Migration
  `id_commentator` int(11) NOT NULL,
  `id_article` int(11) NOT NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_commentator`) REFERENCES commentators (`id`),
- FOREIGN KEY (`id_article`) REFERENCES articles (`id`)
+ FOREIGN KEY (`id_commentator`) REFERENCES commentators (`id`) ON DELETE CASCADE,
+ FOREIGN KEY (`id_article`) REFERENCES articles (`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('comments')) {

@@ -31,7 +31,7 @@ class CreateProductsTable extends Migration
  `description` varchar(1000) NOT NULL,
  `additional_information` varchar(1000) DEFAULT NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`)
+ FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('products')) {

@@ -22,8 +22,8 @@ class CreateProductSizeTable extends Migration
  `id_products` int NULL,
  `id_sizes` int NULL,
  PRIMARY KEY (`id`),
- FOREIGN KEY (`id_sizes`) REFERENCES `sizes`(`id`),
- FOREIGN KEY (`id_products`) REFERENCES `products`(`id`)
+ FOREIGN KEY (`id_sizes`) REFERENCES `sizes`(`id`) ON DELETE CASCADE,
+ FOREIGN KEY (`id_products`) REFERENCES `products`(`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('product_size')) {
