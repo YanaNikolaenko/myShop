@@ -1,3 +1,4 @@
 /.idea
 /vendor
+/config/db_params.php
 /node_modules
