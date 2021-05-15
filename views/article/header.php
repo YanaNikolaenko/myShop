@@ -75,7 +75,7 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <li>
-                            <a href="/l">Home</a>
+                            <a href="/">Home</a>
                             <ul class="sub_menu">
                                 <li><a href="/">Homepage V1</a></li>
                                 <li><a href="/">Homepage V2</a></li>

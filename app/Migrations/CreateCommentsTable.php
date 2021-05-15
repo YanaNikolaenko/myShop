@@ -20,6 +20,7 @@ class CreateCommentsTable extends Migration
         $sql = "CREATE TABLE `comments` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `content` varchar(1000) NOT NULL,
+ `time` datetime NOT NULL,
  `id_commentator` int(11) NOT NULL,
  `id_article` int(11) NOT NULL,
  PRIMARY KEY (`id`),

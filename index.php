@@ -15,5 +15,5 @@ use App\Models\Product;
 
 
 //echo "<pre>";
-//var_dump(\App\Models\Article::all());
+//var_dump(\App\Models\Article::getById(1));
 //echo "</pre>";

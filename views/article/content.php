@@ -79,6 +79,30 @@
                         </div>
                     </div>
 
+                    <p class="s-text8 p-b-40"></p>
+
+                    <form class="leave-comment">
+                        <h4 class="m-text25 p-b-14">
+                            Comments
+                        </h4>
+                        <?php foreach ($article['comments'] as $comment): ?>
+                        <p class="s-text8" style="display: inline-block; font-size: 13px; font-weight: bold; color: black; ">
+                            <?=$comment['name']?>
+                        </p>
+                        <p class="s-text8" style="display: inline-block">&nbsp&nbsp</p>
+                        <p class="s-text8" style="display: inline-block">
+                            <?=$comment['time']?>
+                        </p>
+
+                        <p class="s-text8 p-b-40">
+                            <?=$comment['content']?>
+                        </p>
+                    </form>
+                    <? endforeach ?>
+
+                    <p class="s-text8 p-b-40"></p>
+
+
                     <!-- Leave a comment -->
                     <form class="leave-comment">
                         <h4 class="m-text25 p-b-14">
@@ -99,9 +123,9 @@
                             <input class="sizefull s-text7 p-l-18 p-r-18" type="text" name="email" placeholder="Email *">
                         </div>
 
-                        <div class="bo12 of-hidden size19 m-b-30">
+                        <!--<div class="bo12 of-hidden size19 m-b-30">
                             <input class="sizefull s-text7 p-l-18 p-r-18" type="text" name="website" placeholder="Website">
-                        </div>
+                        </div>-->
 
                         <div class="w-size24">
                             <!-- Button -->

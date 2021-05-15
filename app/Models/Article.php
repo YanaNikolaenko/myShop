@@ -12,7 +12,7 @@ class Article
     public static function all(): array
     {
         $connect = Db::getConnection();
-        $query = $connect->query("SELECT * FROM `articles`");
+        $query = $connect->query("SELECT id, title, summary, content, DATE_FORMAT(date, '%e %b %Y') as date, image, id_category, id_author FROM `articles`");
 
         $articles = [];
         $i=0;
@@ -21,7 +21,7 @@ class Article
             $articles[$i]['title'] = $article['title'];
             $articles[$i]['summary'] = $article['summary'];
             $articles[$i]['content'] = $article['content'];
-            //$articles[$i]['date'] = date($article['date']);
+            $articles[$i]['date'] = $article['date'];
             $articles[$i]['image'] = $article['image'];
             $category = BlogCategories::getById($article['id_category']);
             $articles[$i]['category'] = $category['title'];
@@ -53,7 +53,7 @@ class Article
     {
         $id = (int)$id;
         $connect = Db::getConnection();
-        $query = $connect->query("SELECT * FROM `articles` WHERE id = $id");
+        $query = $connect->query("SELECT id, title, summary, content, DATE_FORMAT(date, '%e %b %Y') as date, image, id_category, id_author FROM `articles` WHERE id = $id");
         $article = $query->fetch(PDO::FETCH_ASSOC);
         $category = BlogCategories::getById($article['id_category']);
         //$article['date'] = date($article['date']);
@@ -61,6 +61,7 @@ class Article
         $author = Authors::getById($article['id_author']);
         $article['author'] = $author['name'];
         $article['count_comments'] = Comments::getCountByArticle($article['id']);
+        $article['comments'] = Comments::getByArticle($article['id']);
         return $article;
     }
 
