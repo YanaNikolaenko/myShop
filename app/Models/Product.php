@@ -89,7 +89,7 @@ class Product
      * @return array
      */
 
-    public static function getByCategory($category): array
+    public static function getByCategorySlug($slug): array
     {
         $connect = Db::getConnection();
 

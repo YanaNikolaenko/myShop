@@ -23,10 +23,32 @@ class CatalogController
     /**
      * This is a function for working with a profile
      */
-    public function index()
+    public function index($slug)
     {
-        $products=Product::all();
+        $products = [];
+        $categories = [];
+
+        if(is_null($slug)){
+            $products=Product::all();
+        }else{
+            $products=Product::getByCategorySlug($slug);
+        }
+
         $categories=Category::all();
+
+        foreach ($categories as $key=>$category){
+
+            $categories[$key]['title'] = $category['title'];
+            $categories[$key]['title'] = $category['title'];
+            $categories[$key]['title'] = $category['title'];
+            $categories[$key]['title'] = $category['title'];
+            $categories[$key]['title'] = $category['title'];
+
+            if($category['slug'] === $slug){
+                $categories[$key]['is_active'] = true;
+            }
+        }
+
 
         require VIEW_ROOT . "parts/catalog/catalog.php";
     }
