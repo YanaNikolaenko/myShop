@@ -52,10 +52,10 @@ class CatalogController
 
         require VIEW_ROOT . "parts/catalog/catalog.php";
     }
-
-
-    public function categoryAjax($category)
-    {
-        return json_encode(Product::getProductsByCategory($category));
-    }
+//
+//
+//    public function categoryAjax($category)
+//    {
+//        return json_encode(Product::getProductsByCategory($category));
+//    }
 }
