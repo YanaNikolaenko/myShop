@@ -16,11 +16,11 @@ class CreateUserTable extends Migration
 
         // sql to create table
         $sql = "CREATE TABLE user (" .
-            "id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY," .
-            "firstname VARCHAR(30) NOT NULL," .
-            "lastname VARCHAR(30) NOT NULL," .
-            "email VARCHAR(50) NOT NULL UNIQUE," .
-            "password VARCHAR(10) NOT NULL" .
+            "id INT(6) AUTO_INCREMENT PRIMARY KEY," .
+            "firstname char(30) NOT NULL," .
+            "lastname char(30) NOT NULL," .
+            "email char(50) NOT NULL UNIQUE," .
+            "password char(20) NOT NULL" .
             ")";
 
         if (!$instance->tableExist('user')) {

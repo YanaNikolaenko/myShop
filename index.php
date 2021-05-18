@@ -9,11 +9,12 @@ $router = new Router();
 $router->run();
 
 use App\Models\Image;
-use App\Models\Size;
+use App\Models\Comments;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\Article;
 
 
 //echo "<pre>";
-//var_dump(\App\Models\Article::getById(1));
+//var_dump(Article::getById(1));
 //echo "</pre>";

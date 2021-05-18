@@ -18,8 +18,8 @@ class CreateImagesTable extends Migration
 
         // sql to create table
         $sql = "CREATE TABLE `images` (
- `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
- `url` varchar(10000) NOT NULL,
+ `id` int(10) NOT NULL AUTO_INCREMENT,
+ `url` varchar(800) NOT NULL,
  `id_products` int(10) NOT NULL,
  PRIMARY KEY (`id`),
  FOREIGN KEY (`id_products`) REFERENCES products (`id`) ON DELETE CASCADE

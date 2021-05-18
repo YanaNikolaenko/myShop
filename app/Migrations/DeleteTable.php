@@ -21,6 +21,7 @@ class DeleteTable extends Migration
         }
 
         $instance->con->query("DROP DATABASE " . $param . "; CREATE DATABASE " . $param . "; USE " . $param . ";");
+        echo "All tables deleted successfully" . "<br>";
     }
 
     public static function deleteTable($name)

@@ -21,28 +21,28 @@ class CatalogController
 
 
     /**
-     * This is a function for working with a profile
+     * @param $slug
      */
-    public function index($slug)
+
+    public function index($slug = null)
     {
         $products = [];
         $categories = [];
 
-        if(is_null($slug)){
-            $products=Product::all();
-        }else{
+        if(!is_null($slug) && $slug !== 'all') {
             $products=Product::getByCategorySlug($slug);
+        }
+        else {
+            $products=Product::all();
         }
 
         $categories=Category::all();
-
         foreach ($categories as $key=>$category){
-
             $categories[$key]['title'] = $category['title'];
-            $categories[$key]['title'] = $category['title'];
-            $categories[$key]['title'] = $category['title'];
-            $categories[$key]['title'] = $category['title'];
-            $categories[$key]['title'] = $category['title'];
+            $categories[$key]['image'] = $category['image'];
+            $categories[$key]['slug'] = $category['slug'];
+            $categories[$key]['description'] = $category['description'];
+            $categories[$key]['is_active'] = false;
 
             if($category['slug'] === $slug){
                 $categories[$key]['is_active'] = true;
@@ -52,8 +52,8 @@ class CatalogController
 
         require VIEW_ROOT . "parts/catalog/catalog.php";
     }
-//
-//
+
+
 //    public function categoryAjax($category)
 //    {
 //        return json_encode(Product::getProductsByCategory($category));

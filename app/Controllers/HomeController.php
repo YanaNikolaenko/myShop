@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
+use App\Models\Category;
 use App\Models\Slider;
 
 /**
@@ -25,7 +26,7 @@ class HomeController
     public function index()
     {
         $sliders=Slider::all();
-
+        $categories=Category::all();
         require VIEW_ROOT . "parts/home/index.php";
     }
 

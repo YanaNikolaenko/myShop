@@ -10,22 +10,41 @@
                     </h4>
 
                     <ul class="p-b-54">
+                        <?php
+                        if ($slug == null):?>
+                        <li class="p-t-4">
+                            <a href="/catalog" class="s-text13 active1" style="color: #e65540">
+                                All
+                            </a>
+                        </li>
+                        <?else :?>
+                            <li class="p-t-4">
+                                <a href="/catalog" class="s-text13"">
+                                    All
+                                </a>
+                            </li>
+                        <?endif;?>
+
                     <?php foreach ($categories as $category): ?>
-                        <li class="p-t-4">
-                            <a href="/catalog/<?= lcfirst($category['title']) ?>" class="s-text13 active1">
-                                <?= $category['title'] ?>
-                            </a>
-                        </li>
+
+                        <?php
+                        if ($category['is_active'] == true):?>
+                            <li class="p-t-4">
+                                <a href="/catalog/<?= lcfirst($category['title']) ?>" class="s-text13 active1" style="color: #e65540">
+                                    <?= $category['title'] ?>
+                                </a>
+                            </li>
+                        <?else :?>
+                            <li class="p-t-4">
+                                <a href="/catalog/<?= lcfirst($category['title']) ?>" class="s-text13">
+                                    <?= $category['title'] ?>
+                                </a>
+                            </li>
+                        <?endif;?>
+
                     <? endforeach ?>
-<!--////////////////////////////////////////////////////////////////////////////////////////////////-->
-                        <li class="p-t-4">
-                            <a href="#" class="s-text13">
-                                НЕ АКТИВНЫЙ
-                            </a>
-                        </li>
                     </ul>
 
-                    <!--  -->
                     <h4 class="m-text14 p-b-32">
                         Filters
                     </h4>

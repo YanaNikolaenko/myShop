@@ -24,15 +24,19 @@ class Category
 
     /**
      * @param $title
+     * @param $image
+     * @param $slug
      * @param $description
      * @return bool
      */
-    public static function create($title, $description)
+    public static function create($title, $image, $slug, $description) : bool
     {
         $connect = Db::getConnection();
-        $sql = "INSERT INTO categories (title, description) VALUES (:title, :description)";
+        $sql = "INSERT INTO categories (title, image, slug, description) VALUES (:title, :image, :slug, :description)";
         $result = $connect->prepare($sql);
         $result->bindParam(':title', $title, PDO::PARAM_STR);
+        $result->bindParam(':image', $image, PDO::PARAM_STR);
+        $result->bindParam(':slug', $slug, PDO::PARAM_STR);
         $result->bindParam(':description', $description, PDO::PARAM_STR);
         return $result->execute();
     }

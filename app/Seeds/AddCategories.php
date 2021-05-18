@@ -15,10 +15,9 @@ class AddCategories extends Migration
 {
     public static function AddCategories ()
     {
-        Category::create('All', 'New Collection 2021');
-        Category::create('Women', 'New Arrivals Women Collection 2021');
-        Category::create('Men', 'New Arrivals Men Collection 2021');
-        Category::create('Kids', 'New Arrivals Kids Collection 2021');
+        Category::create('Women', 'images/banner-16.jpg', 'women', 'New Arrivals Women Collection 2021');
+        Category::create('Men', 'images/banner-15.jpg', 'men', 'New Arrivals Men Collection 2021');
+        Category::create('Kids', 'images/banner-17.jpg', 'kids', 'New Arrivals Kids Collection 2021');
         echo "Categories added successfully<br>";
     }
 }

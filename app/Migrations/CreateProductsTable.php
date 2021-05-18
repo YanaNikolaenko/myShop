@@ -28,7 +28,7 @@ class CreateProductsTable extends Migration
  `discount` tinyint(100) unsigned NOT NULL DEFAULT '0',
  `is_sale` tinyint(1) NOT NULL DEFAULT 0,
  `is_new` tinyint(1) NOT NULL DEFAULT 0,
- `description` varchar(1000) NOT NULL,
+ `description` varchar(500) NOT NULL,
  `additional_information` varchar(1000) DEFAULT NULL,
  PRIMARY KEY (`id`),
  FOREIGN KEY (`id_category`) REFERENCES `categories`(`id`) ON DELETE CASCADE

@@ -7,10 +7,10 @@ use App\Models\Auth;
 use App\Models\User;
 
 /**
- * Class CabinetController
+ * Class ProfileController
  * @package App\Controllers
  */
-class CabinetController
+class ProfileController
 {
 
     public function __construct()
@@ -27,7 +27,7 @@ class CabinetController
     {
         $user = Auth::getUser();
 
-        require VIEW_ROOT . "cabinet/profile.php";
+        require VIEW_ROOT . "parts/profile/profile.php";
     }
 
 

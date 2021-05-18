@@ -5,8 +5,8 @@
         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
     </a>
 
-    <a href="../../index.php" class="s-text16">
-        <?=$product['category']?>
+    <a href="/catalog/<?=lcfirst($product['category']['title'])?>" class="s-text16">
+        <?=$product['category']['title']?>
         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
     </a>
 
@@ -46,11 +46,16 @@
                 <?=$product['title']?>
             </h4>
 
+            <?php
+            if ($product['price'] == $product['new_price']):?>
+                <span class="m-text17"><?=$product['price']?> </span>
+            <?else:?>
+                <span class="m-text17" style="text-decoration: line-through"><?=$product['price']?> </span>
 
-            <span class="m-text17" style="text-decoration: line-through"><?=$product['price']?> </span>
+                <span class="m-text17" style="color: #e65540">&nbsp&nbsp<?=$product['new_price']?></span>
+            <?endif;
+            ?>
 
-
-            <span class="m-text17" style="color: #e65540">&nbsp&nbsp<?=$product['new_price']?></span>
 
             <p class="s-text8 p-t-10">
                 <?=$product['description']?>
@@ -115,7 +120,7 @@
 
             <div class="p-b-45">
                 <span class="s-text8 m-r-35">SKU: <?=$product['id']?></span>
-                <span class="s-text8">Categories: <?=$product['category']?></span>
+                <span class="s-text8">Categories: <?=$product['category']['title']?></span>
             </div>
 
             <!--  -->

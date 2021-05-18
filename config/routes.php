@@ -5,7 +5,7 @@ return array (
     'login' => 'auth/login',
     'logout' => 'auth/logout',
     'register' => 'auth/register',
-    'profile' => 'cabinet/profile',
+    'profile' => 'profile/profile',
     'user' => 'user/list',
     'access-denied'=>'server/accessDenied',
 

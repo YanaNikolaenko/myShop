@@ -25,12 +25,12 @@
 
                             <div class="s-text8 flex-w flex-m p-b-21">
 									<span>
-										By <?=$article['author']?>
+										By <?=$article['user']['firstname'] . ' ' . $article['user']['lastname']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
                                 <span>
-										<?=$article['category']?>
+										<?=$article['category']['title']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
@@ -40,7 +40,7 @@
                             </div>
 
                             <p class="p-b-12">
-                                <?=$article['summary']?>
+                                <?=$article['short_description']?>
                             </p>
 
                             <a href="/article/<?=$article['id']?>" class="s-text20">

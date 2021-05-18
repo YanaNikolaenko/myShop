@@ -1,5 +1,5 @@
 
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/profile/header.php'; ?>
 
 
 <table border="1">
@@ -26,4 +26,4 @@
 
 
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/profile/footer.php'; ?>

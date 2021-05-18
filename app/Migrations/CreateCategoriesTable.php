@@ -20,6 +20,8 @@ class CreateCategoriesTable extends Migration
         $sql = "CREATE TABLE `categories` (
  `id` int NOT NULL AUTO_INCREMENT,
  `title` char(255) NOT NULL,
+ `image` char(255) NOT NULL,
+ `slug` char(255) NOT NULL UNIQUE,
  `description` char(255) NOT NULL,
  PRIMARY KEY (`id`)
 )";

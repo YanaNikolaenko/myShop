@@ -34,7 +34,7 @@
 
                             <div class="s-text8 flex-w flex-m p-b-21">
 									<span>
-										By <?=$article['author']?>
+										By <?=$article['user']['firstname'] . ' ' . $article['user']['lastname']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
@@ -44,7 +44,7 @@
 									</span>
 
                                 <span>
-										<?=$article['category']?>
+										<?=$article['category']['title']?>
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
@@ -56,10 +56,6 @@
                             <p class="p-b-25">
                                 <?=$article['content']?>
                             </p>
-
-                            <!--<p class="p-b-25">
-                                Aliquam faucibus scelerisque placerat. Vestibulum vel libero eu nulla varius pretium eget eu magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean dictum faucibus felis, ac vestibulum risus mollis in. Phasellus neque dolor, euismod vitae auctor eget, dignissim a felis. Etiam malesuada elit a nibh aliquam, placerat ultricies nibh dictum. Nam ut egestas velit. Pellentesque viverra tincidunt tellus. Etiam cursus, ligula id vehicula cursus, turpis mauris facilisis massa, eget tincidunt est purus et odio. Nam quis luctus libero, non posuere velit. Ut eu varius diam, eu euismod elit. Donec efficitur, neque eu consectetur consectetur, dui sem consectetur felis, vitae rutrum risus urna vel arcu. Aliquam semper ullamcorper laoreet. Sed arcu lectus, fermentum imperdiet purus eu, ornare ornare libero.
-                            </p>-->
                         </div>
 
                         <div class="flex-m flex-w p-t-20">

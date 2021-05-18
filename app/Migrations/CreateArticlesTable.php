@@ -20,15 +20,15 @@ class CreateArticlesTable extends Migration
         $sql = "CREATE TABLE `articles` (
  `id` int(10) NOT NULL AUTO_INCREMENT,
  `title` char(255) NOT NULL,
- `summary` varchar(800) NOT NULL,
+ `short_description` varchar(800) NOT NULL,
  `content` varchar(10000) NOT NULL,
  `date` date NOT NULL,
  `image` char(255) NOT NULL,
  `id_category` int(10) NOT NULL,
- `id_author` int(10) NOT NULL,
+ `id_user` int(10) NOT NULL,
  PRIMARY KEY (`id`),
  FOREIGN KEY (`id_category`) REFERENCES blog_categories (`id`) ON DELETE CASCADE,  
- FOREIGN KEY (`id_author`) REFERENCES authors (`id`) ON DELETE CASCADE
+ FOREIGN KEY (`id_user`) REFERENCES user (`id`) ON DELETE CASCADE
 )";
 
         if (!$instance->tableExist('articles')) {

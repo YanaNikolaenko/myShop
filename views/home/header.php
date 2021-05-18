@@ -4,6 +4,15 @@
     <title>Home 02</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+
+
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="<?=TEMPLATE_ROOT?>images/icons/favicon.png"/>
     <!--===============================================================================================-->
@@ -90,7 +99,7 @@
     </div>
 
     <!-- Header Icon -->
-<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////ВЫПАДАЮЩЕЕ МЕНЮ//////////////////////////////////////////// -->
     <div class="header-icons">
 
 
@@ -102,7 +111,7 @@
 
             <!--первая форма залогиниться-->
             <div id="header-login" class="header-cart header-dropdown login-dropdown">
-                <form class="leave-comment" action="../../index.php" method="post">
+                <form class="leave-comment" action="login" method="post">
                     <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                         Enter email and password ss
                     </div>
@@ -126,7 +135,7 @@
                         Don't have an account yet?
                     </div>
                     <div class="register"style="font-size: 15px; text-align: center;">
-                        <div style="font-weight: bolder">Register now</div>
+                        <div class="register-button">Register now</div>
                     </div>
 
                 </form>
@@ -134,7 +143,7 @@
 
             <!--форма регистрации-->
             <div   class="header-cart header-dropdown2 register-dropdown">
-                <form class="leave-comment" action="../../index.php" method="post">
+                <form class="leave-comment" action="register"  method="post">
                     <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                         Fill in all the form fields
                     </div>
@@ -171,7 +180,7 @@
                     </div>
 
                     <div style="font-size: 15px; padding-top: 20px; text-align:  center;">
-                        Do you have an account?&#8195;<div class="login" style="font-weight: bolder">Login</div>
+                        Do you have an account?&#8195;<div class="login-button">Login</div>
                     </div>
 
                 </form>
@@ -191,7 +200,7 @@
             <span class="header-icons-noti">0</span>
 
             <!-- Header cart noti -->
-            <div class="header-cart header-dropdown">
+            <div class="header-cart header-dropdown cart-dropdown">
                 <ul class="header-cart-wrapitem">
                     <li class="header-cart-item">
                         <div class="header-cart-item-img">
@@ -319,7 +328,7 @@
 
                     <!--первая форма залогиниться-->
                     <div class="header-cart header-dropdown login-dropdown">
-                        <form class="leave-comment" action="../../index.php" method="post">
+                        <form class="leave-comment" action="login" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Enter email and password
                             </div>
@@ -343,17 +352,14 @@
                                 Don't have an account yet?
                             </div>
                             <div  style="font-size: 15px; text-align: center;" >
-                                <div style="font-weight: bolder" class="register-button-dropdown">Register now</div>
+                                <div class="register-button">Register now</div>
                             </div>
 
                         </form>
                     </div>
-
-
-
                     <!--форма регистрации-->
-                    <div class="header-cart header-dropdown2  register-dropdown">
-                        <form class="leave-comment" action="../../index.php" method="post">
+                    <div class="header-cart header-dropdown2 register-dropdown">
+                        <form class="leave-comment" action="register" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Fill in all the form fields
                             </div>
@@ -390,7 +396,7 @@
                             </div>
 
                             <div style="font-size: 15px; padding-top: 20px; text-align:  center;" >
-                                Do you have an account?&#8195;<div class="login-button-dropdown" style="font-weight: bolder">Login</div>
+                                Do you have an account?&#8195;<div class="login-button">Login</div>
                             </div>
 
                         </form>
@@ -398,16 +404,14 @@
                 </div>
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 
-
-
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2 m-r-13">
-                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown cart-button-dropdown" alt="ICON">
+                    <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
-                    <div class="header-cart header-dropdown">
+                    <div class="header-cart header-dropdown cart-dropdown">
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
@@ -479,8 +483,7 @@
                         </div>
                     </div>
                 </div>
-
-
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
             </div>
         </div>
 
@@ -503,9 +506,9 @@
 
 
 
-        <div class="wrap_header">
+                        <div class="wrap_header">
 
-            <!-- Menu -->
+                            <!-- Menu -->
             <div class="wrap_menu">
                 <nav class="menu">
                     <ul class="main_menu">
@@ -568,8 +571,8 @@
                     <img src="<?=TEMPLATE_ROOT?>images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <!-- Header cart noti -->
                     <!--первая форма залогиниться-->
-                    <div class="header-cart header-dropdown">
-                        <form class="leave-comment" action="../../index.php" method="post">
+                    <div class="header-cart header-dropdown login-dropdown">
+                        <form class="leave-comment" action="login" method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Enter email and password
                             </div>
@@ -593,14 +596,14 @@
                                 Don't have an account yet?
                             </div>
                             <div class="register" style="font-size: 15px; text-align: center;">
-                                <div style="font-weight: bolder">Register now</div>
+                                <div class="register-button">Register now</div>
                             </div>
 
                         </form>
                     </div>
                     <!--форма регистрации-->
-                    <div class="header-cart header-dropdown2">
-                        <form class="leave-comment" action="../../index.php" method="post">
+                    <div class="header-cart header-dropdown2 register-dropdown">
+                        <form class="leave-comment" action="register"  method="post">
                             <div style="font-size: 15px; padding-bottom: 20px; text-align:  center;">
                                 Fill in all the form fields
                             </div>
@@ -637,7 +640,7 @@
                             </div>
 
                             <div style="font-size: 15px; padding-top: 20px; text-align:  center;">
-                                Do you have an account?&#8195;<div class="login" style="font-weight: bolder">Login</div>
+                                Do you have an account?&#8195;<div class="login-button">Login</div>
                             </div>
 
                         </form>
@@ -651,7 +654,7 @@
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
-                    <div class="header-cart header-dropdown">
+                    <div class="header-cart header-dropdown cart-dropdown">
                         <ul class="header-cart-wrapitem">
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
