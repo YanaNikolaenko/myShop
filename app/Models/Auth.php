@@ -22,4 +22,6 @@ class Auth
     {
         return User::getByEmail(Session::get('email'));
     }
+
+
 }

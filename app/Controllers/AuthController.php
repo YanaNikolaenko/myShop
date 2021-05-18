@@ -76,6 +76,7 @@ class AuthController
                 Session::set('errors', $errors);
                 redirect(301, server('HTTP_REFERER'));
             }
+
         }else{
             redirect(301, '/');
         }

@@ -10,13 +10,14 @@ use App\Models\Product;
  * Class CatalogController
  * @package App\Controllers
  */
-class CatalogController
+class CatalogController extends Controller
 {
 
     public function __construct()
     {
         //Middlewares
         //UserMiddleware::isAuthorized('email');
+        parent::__construct();
     }
 
 
@@ -28,23 +29,24 @@ class CatalogController
     {
         $products = [];
         $categories = [];
+        $user = $this->auth;
 
-        if(!is_null($slug) && $slug !== 'all') {
-            $products=Product::getByCategorySlug($slug);
-        }
-        else {
-            $products=Product::all();
+        if (!is_null($slug) && $slug !== 'all') {
+            $products = Product::getByCategorySlug($slug);
+        } else {
+            $products = Product::all();
         }
 
-        $categories=Category::all();
-        foreach ($categories as $key=>$category){
+        $categories = Category::all();
+
+        foreach ($categories as $key => $category) {
             $categories[$key]['title'] = $category['title'];
             $categories[$key]['image'] = $category['image'];
             $categories[$key]['slug'] = $category['slug'];
             $categories[$key]['description'] = $category['description'];
             $categories[$key]['is_active'] = false;
 
-            if($category['slug'] === $slug){
+            if ($category['slug'] === $slug) {
                 $categories[$key]['is_active'] = true;
             }
         }
