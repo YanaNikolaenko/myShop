@@ -77,7 +77,7 @@
 
                     <p class="s-text8 p-b-40"></p>
 
-                    <form class="leave-comment">
+                    <div class="leave-comment" >
                         <h4 class="m-text25 p-b-14">
                             Comments
                         </h4>
@@ -93,12 +93,12 @@
                             <?=$comment['content']?>
                         </p>
                     <? endforeach ?>
-                    </form>
+                    </div>
                     <p class="s-text8 p-b-40"></p>
 
 
                     <!-- Leave a comment -->
-                    <form class="leave-comment" action="comment" method="post">
+                    <form class="leave-comment" action="comment/<?=$article['id']?>" method="post">
                         <h4 class="m-text25 p-b-14">
                             Leave a Comment
                         </h4>

@@ -13,18 +13,22 @@ use App\Models\Commentators;
 use App\Models\Comments;
 use App\Models\User;
 
-class BlogController
+class BlogController extends Controller
 {
+    /**
+     * BlogController constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
         $blogCategories = BlogCategories::all();
         $categories = Category::all();
         $articles = Article::all();
-
-        if(Auth::isAuthorized())
-        {
-            $user = Auth::getUser();
-        }
+        $user = $this->auth;
 
         require VIEW_ROOT . "blog/blog.php";
     }
@@ -34,45 +38,50 @@ class BlogController
         $blogCategories = BlogCategories::all();
         $categories = Category::all();
         $article = Article::getById($id_article);
+        $user = $this->auth;
 
-        if(Auth::isAuthorized())
-        {
-            $user = Auth::getUser();
-        }
         require VIEW_ROOT . "article/article.php";
     }
 
 
-    public function comment()
+    public function comment($articleId)
     {
-        if(server('REQUEST_METHOD') == 'POST') {
 
+        if (server('REQUEST_METHOD') == 'POST') {
+
+            //Если авторизованный
             if (Auth::isAuthorized()) {
+
                 $user = Auth::getUser();
-                $name = $user['firstname'] . " " . $user['lastname'];
+                $name = sprintf("%s %s", $user['firstname'], $user['lastname']);
                 $comment = $_POST['comment'];
-                $url_array = explode('/', $_SERVER['HTTP_REFERER']);
-                $id_article = array_pop($url_array);
+
 
                 $errors = null;
+
+                //Вадидация
                 if (!Comments::checkComment($comment)) $errors[] = "Введен слишком длинный комментарий";
 
+
                 if (empty($errors)) {
+
+                    //Добавляем коммент
                     if (Commentators::create($name, $user['email'])) {
                         $commentator = Commentators::getByEmail($user['email']);//выбираю данные по email (поле unique)
-                        Comments::create($comment, $commentator['id'], $id_article);
+                        Comments::create($comment, $commentator['id'], $articleId);
                         header('Location: ' . server('HTTP_REFERER'));
                     }
                 } else {
                     Session::set('errors', $errors);
                 }
-            } else {
+
+
+            } //Если не авторизованный
+            else {
 
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $comment = $_POST['comment'];
-                $url_array = explode('/', $_SERVER['HTTP_REFERER']);
-                $id_article = array_pop($url_array);
 
                 $errors = null;//создаю пустой массив, где будут хранится ошибки при вводе некорректных данных в поля регистрации
                 if (!User::checkName($name)) $errors[] = "Имя введено некорректно";
@@ -82,17 +91,15 @@ class BlogController
                 if (empty($errors)) {
                     if (Commentators::create($name, $email)) {
                         $commentator = Commentators::getByEmail($email);//выбираю данные по email (поле unique)
-                        Comments::create($comment, $commentator['id'], $id_article);
+                        Comments::create($comment, $commentator['id'], $articleId);
                         header('Location: ' . server('HTTP_REFERER'));
                     }
                 } else {
                     Session::set('errors', $errors);
                 }
             }
+        } else {
+            redirect(301, "/");
         }
-        else
-            {
-                redirect(301, "/");
-            }
-        }
+    }
 }

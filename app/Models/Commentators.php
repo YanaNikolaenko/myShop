@@ -31,6 +31,11 @@ class Commentators
         return $result->execute();
     }
 
+    public static function firstOrCreate($name, $email): bool
+    {
+       //TODO: Если не существует создать и вернуть если существует просто вернуть
+    }
+
     public static function getByEmail($email)
     {
         $connect = Db::getConnection();

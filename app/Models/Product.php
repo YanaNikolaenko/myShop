@@ -23,12 +23,12 @@ class Product
 
         $products = [];
 
-        foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key=>$product) {
+        foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key => $product) {
             $products[$key]['id'] = $product['id'];
             $products[$key]['category'] = Category::getById($product['id_category']);
             $products[$key]['title'] = $product['title'];
             $products[$key]['price'] = $product['price'];
-            $products[$key]['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount']/100), 2);
+            $products[$key]['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount'] / 100), 2);
             $products[$key]['is_sale'] = $product['is_sale'];
             $products[$key]['is_new'] = $product['is_new'];
             $products[$key]['description'] = $product['description'];
@@ -66,7 +66,6 @@ class Product
      * @param $additional_information
      * @return bool
      */
-
     public static function create($id_category, $title, $price, $discount, $is_sale, $is_new, $description, $additional_information): bool
     {
         $connect = Db::getConnection();
@@ -87,7 +86,6 @@ class Product
      * @param $slug
      * @return array
      */
-
     public static function getByCategorySlug($slug): array
     {
         $connect = Db::getConnection();
@@ -96,12 +94,12 @@ class Product
 
         $products = [];
 
-        foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key=>$product) {
+        foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key => $product) {
             $products[$key]['id'] = $product['id'];
             $products[$key]['category'] = Category::getById($product['id_category']);
             $products[$key]['title'] = $product['title'];
             $products[$key]['price'] = $product['price'];
-            $products[$key]['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount']/100), 2);
+            $products[$key]['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount'] / 100), 2);
             $products[$key]['is_sale'] = $product['is_sale'];
             $products[$key]['is_new'] = $product['is_new'];
             $products[$key]['description'] = $product['description'];
@@ -116,7 +114,6 @@ class Product
      * @param $id
      * @return mixed
      */
-
     public static function getById($id)
     {
         $id = (int)$id;
@@ -124,7 +121,7 @@ class Product
         $query = $connect->query("SELECT * FROM products WHERE id = $id");
         $product = $query->fetch(PDO::FETCH_ASSOC);
         $product['category'] = Category::getById($product['id_category']);
-        $product['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount']/100), 2);
+        $product['new_price'] = round((float)$product['price'] * (1 - (float)$product['discount'] / 100), 2);
         $product['images'] = Image::getByIdProduct($product['id']);
         $product['sizes'] = Size::getByIdProduct($product['id']);
         $product['colors'] = Color::getByIdProduct($product['id']);

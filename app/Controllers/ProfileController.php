@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
 use App\Models\Auth;
-use App\Models\User;
 
 /**
  * Class ProfileController
