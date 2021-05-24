@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Middleware\UserMiddleware;
 use App\Models\Category;
 use App\Models\Slider;
+use App\Models\Auth;
+
 
 /**
  * Class HomeController
@@ -27,7 +29,12 @@ class HomeController
     {
         $sliders=Slider::all();
         $categories=Category::all();
-        require VIEW_ROOT . "parts/home/index.php";
+
+        if(Auth::isAuthorized())
+        {
+            $user = Auth::getUser();
+        }
+        require VIEW_ROOT . "home/home.php";
     }
 
 

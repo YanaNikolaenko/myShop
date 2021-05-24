@@ -27,7 +27,7 @@ class ProfileController
     {
         $user = Auth::getUser();
 
-        require VIEW_ROOT . "parts/profile/profile.php";
+        require VIEW_ROOT . "profile/profile.php";
     }
 
 

@@ -31,4 +31,10 @@ class Commentators
         return $result->execute();
     }
 
+    public static function getByEmail($email)
+    {
+        $connect = Db::getConnection();
+        $results = $connect->query("SELECT * FROM commentators WHERE email = '$email'");
+        return $results->fetch(PDO::FETCH_ASSOC);
+    }
 }

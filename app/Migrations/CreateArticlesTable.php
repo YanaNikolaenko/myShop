@@ -19,8 +19,8 @@ class CreateArticlesTable extends Migration
         // sql to create table
         $sql = "CREATE TABLE `articles` (
  `id` int(10) NOT NULL AUTO_INCREMENT,
- `title` char(255) NOT NULL,
- `short_description` varchar(800) NOT NULL,
+ `title` char(55) NOT NULL,
+ `short_description` varchar(400) NOT NULL,
  `content` varchar(10000) NOT NULL,
  `date` date NOT NULL,
  `image` char(255) NOT NULL,

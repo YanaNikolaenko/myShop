@@ -14,7 +14,7 @@ use App\Models\Color;
 use App\Models\Product;
 use App\Models\Article;
 
-
+//
 //echo "<pre>";
-//var_dump(Article::getById(1));
+//var_dump($_SERVER['REQUEST_URI']);
 //echo "</pre>";

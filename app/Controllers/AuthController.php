@@ -62,14 +62,13 @@ class AuthController
 
         if(server('REQUEST_METHOD') == 'POST'){
 
-            //Session::delete('email');//для того, если ранее авторизованный пользователь перейдет на страницу логин, то сессия автоматически удалится и входить в профиль придется заново
             $email = $_POST['email'];//принимаем данные из формы (email,пароль)
             $password = $_POST['password'];
 
             if ($user = User::login($email, $password))
             {
                 Session::set('email', $user['email']);//создаем сессию авторизованному пользователю
-                header('Location: profile');
+                header('Location: ' . server('HTTP_REFERER'));
             }
             else if (!empty($_POST)){//нужно чтобы если поля еще не заполнены ничем - не выводилась ошибка, что неправильный логин/пароль
                 $errors = "Вы ввели неправильный логин или пароль!";
@@ -84,8 +83,6 @@ class AuthController
     }
 
 
-
-
     /**
      * This is a function to log out of a previously authorized user
      */
@@ -93,6 +90,6 @@ class AuthController
     public function logout()
     {
         Auth::logout();
-        header('Location: /');
+        header('Location: ' . server('HTTP_REFERER'));
     }
 }

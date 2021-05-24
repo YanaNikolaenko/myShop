@@ -119,6 +119,7 @@ class User
     }
 
     /**
+     * Проверяет, есть ли зарегистрированный ли пользователь и возвращает его данные
      * @param $email
      * @param $password
      * @return mixed

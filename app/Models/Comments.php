@@ -42,4 +42,13 @@ class Comments
         $results = $connect->query("SELECT comments.content, DATE_FORMAT(comments.time, '%k:%i &nbsp %e.%c.%Y') as time, commentators.name FROM `comments` JOIN commentators ON comments.id_commentator = commentators.id WHERE comments.id_article = $id_article");
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * @param string $comment
+     * @return bool
+     */
+    public static function checkComment(string $comment) : bool
+    {
+        return strlen($comment) < 1000;
+    }
 }

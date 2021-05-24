@@ -4,6 +4,8 @@
 namespace App\Controllers;
 
 
+use App\Models\Auth;
+use App\Models\Category;
 use App\Models\Product;
 
 
@@ -12,8 +14,13 @@ class ProductController
     public function product($id)
     {
         $product = Product::getById($id);
+        $categories=Category::all();
 
-        require VIEW_ROOT . "parts/product/product.php";
+        if(Auth::isAuthorized())
+        {
+            $user = Auth::getUser();
+        }
+        require VIEW_ROOT . "product/product.php";
     }
 
     public function allAjax()

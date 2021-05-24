@@ -9,7 +9,7 @@ class AddArticles extends Migration
 {
     public static function AddArticles()
     {
-        Article::create('Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        Article::create('Lorem Ipsum is simply dummy text of the printing?',
             'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit amet tempor magna. Donec eros sem, porta eget leo et, varius eleifend mauris. Donec eu leo congue, faucibus quam eu, viverra mauris. Nulla consectetur lorem mi, at scelerisque metus hendrerit vitae. Proin vel magna vel neque porta ultricies non eget mauris. Suspendisse potenti.
 

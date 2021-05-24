@@ -2354,7 +2354,7 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.login-button, .register-button{
+.login-button, .register-button, .logout-button{
     font-weight: bolder;
     cursor: pointer;
 }
@@ -2363,3 +2363,35 @@ input.num-product::-webkit-inner-spin-button {
     color:#e65540 !important;
 }
 
+.myprof {
+    font-size: 15px;
+    height: 35px;
+    box-shadow: 0 0 1px 0;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.logout:hover, .logout{
+    color:#e65540 !important;
+}
+
+.logout-button:hover{
+    color:#e65540 !important;
+}
+
+.nameUser {
+    font-size: 15px;
+    color: #333333;
+    padding-top: 3px;
+    margin-right: 25px;
+    border-bottom: 1px solid transparent;
+}
+
+.comment {
+    font-family: Montserrat-Regular;
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.8;
+    padding-bottom: 40px;
+    word-wrap: break-word;
+}

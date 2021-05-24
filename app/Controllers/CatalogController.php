@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
+use App\Models\Auth;
 use App\Models\Category;
 use App\Models\Product;
 
@@ -31,7 +32,7 @@ class CatalogController extends Controller
         $categories = [];
         $user = $this->auth;
 
-        if (!is_null($slug) && $slug !== 'all') {
+        if (!is_null($slug)) {
             $products = Product::getByCategorySlug($slug);
         } else {
             $products = Product::all();
@@ -51,8 +52,11 @@ class CatalogController extends Controller
             }
         }
 
-
-        require VIEW_ROOT . "parts/catalog/catalog.php";
+        if(Auth::isAuthorized())
+        {
+            $user = Auth::getUser();
+        }
+        require VIEW_ROOT . "catalog/catalog.php";
     }
 
 

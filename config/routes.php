@@ -2,6 +2,15 @@
 
 return array (
 
+    'product/login' => 'auth/login',
+    'product/register' => 'auth/login',
+    'product/logout' => 'auth/logout',
+
+    'article/login' => 'auth/login',
+    'article/register' => 'auth/login',
+    'article/logout' => 'auth/logout',
+    'article/comment' => 'blog/comment',
+
     'login' => 'auth/login',
     'logout' => 'auth/logout',
     'register' => 'auth/register',

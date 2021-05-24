@@ -3,7 +3,6 @@
 
 namespace App\Middleware;
 
-
 use App\Components\Session;
 
 class UserMiddleware

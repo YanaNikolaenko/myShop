@@ -11,6 +11,9 @@ class Session
 
     /**
      * Устанавливаем ячейку по имени $name c содержимым $value.
+     * @param $name
+     * @param $value
+     * @return string
      */
     public static function set($name, $value): string
     {
@@ -27,7 +30,6 @@ class Session
     public static function get($name)
     {
         return is_array(unserialize($_SESSION[$name])) ? unserialize($_SESSION[$name]) : $_SESSION[$name];
-//        return isset($_SESSION[$name]) ? $_SESSION[$name] : false;
     }
 
     /**
