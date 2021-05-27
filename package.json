@@ -1,29 +1,20 @@
 {
-  "name": "myshop",
-  "version": "0.0.1",
-  "description": "\"my shop\"",
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/YanaNikolaenko/myShop.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/YanaNikolaenko/myShop/issues"
+  "devDependencies": {
+    "webpack": "^5.38.0",
+    "webpack-cli": "^4.2.0"
   },
-  "homepage": "https://github.com/YanaNikolaenko/myShop#readme",
   "dependencies": {
-    "axios": "^0.21.1",
-    "sweetalert2": "^11.0.12"
+    "js-cookie": "^2.2.1"
   }
 }
