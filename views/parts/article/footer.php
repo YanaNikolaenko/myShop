@@ -188,5 +188,16 @@
 <!--===============================================================================================-->
 <script src="<?=TEMPLATE_ROOT?>js/main.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.12/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.12/dist/sweetalert2.css">
+<script src="<?=TEMPLATE_ROOT?>js/errors.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="ajax.js"></script>
+
 </body>
 </html>

@@ -77,35 +77,20 @@
                 <nav class="menu">
                     <ul class="main_menu">
                         <?php $url = explode('/', $_SERVER["REQUEST_URI"]);?>
+                        <?php foreach ($menu as $one_menu): ?>
 
-                        <li <?php if ($url[1] == '') {echo 'class="sale-noti"';}?>>
-                            <a href="/">Home</a>
-                            <!--<ul class="sub_menu">
-                               li><a href="/">Homepage V1</a></li>
-                               <li><a href="/">Homepage V2</a></li>
-                               <li><a href="/">Homepage V3</a></li>
-                            </ul>-->
+                        <?php if ($url[1] === $one_menu['url']):?>
+                        <li class="sale-noti">
+                            <a href="/<?=$one_menu['url']?>"><?=$one_menu['title']?></a>
                         </li>
 
-                        <li <?php if ($url[1] == 'catalog' || $url[1] == 'product') {echo 'class="sale-noti"';}?>>
-                            <a href="/catalog">Shop</a>
+                        <?else :?>
+                        <li>
+                            <a href="/<?=$one_menu['url']?>"><?=$one_menu['title']?></a>
                         </li>
+                        <?endif;?>
 
-                        <li <?php if ($url[1] == 'cart') {echo 'class="sale-noti"';}?>>
-                            <a href="/cart">Cart</a>
-                        </li>
-
-                        <li <?php if ($url[1] == 'blog' || $url[1] == 'article') {echo 'class="sale-noti"';}?>>
-                            <a href="/blog">Blog</a>
-                        </li>
-
-                        <li <?php if ($url[1] == 'about') {echo 'class="sale-noti"';}?>>
-                            <a href="/about">About</a>
-                        </li>
-
-                        <li <?php if ($url[1] == 'contact') {echo 'class="sale-noti"';}?>>
-                            <a href="/contact">Contact</a>
-                        </li>
+                        <? endforeach ?>
                     </ul>
                 </nav>
             </div>
@@ -617,4 +602,6 @@ if ($user !== null):?>
         </nav>
     </div>
 </header>
-
+<button class="first">Title Only</button>
+<button class="second">Title and Text</button>
+<button class="third">Title, Text and Icon</button>

@@ -6,6 +6,7 @@ namespace App\Controllers;
 
 use App\Models\Auth;
 use App\Models\Category;
+use App\Models\Menu;
 use App\Models\Product;
 
 
@@ -13,6 +14,7 @@ class ProductController
 {
     public function product($id)
     {
+        $menu=Menu::all();
         $product = Product::getById($id);
         $categories=Category::all();
 

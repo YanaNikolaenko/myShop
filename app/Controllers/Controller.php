@@ -8,6 +8,7 @@ use App\Models\User;
 class Controller
 {
     /**
+     * Возвращает либо данные пользователя, либо false
      * @var User | null
      */
     protected $auth;

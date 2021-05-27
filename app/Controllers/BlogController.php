@@ -4,13 +4,14 @@
 namespace App\Controllers;
 
 
-use App\Components\Session;
+use App\Components\Cookie;
 use App\Models\Article;
 use App\Models\Auth;
 use App\Models\BlogCategories;
 use App\Models\Category;
 use App\Models\Commentators;
 use App\Models\Comments;
+use App\Models\Menu;
 use App\Models\User;
 
 class BlogController extends Controller
@@ -25,6 +26,7 @@ class BlogController extends Controller
 
     public function index()
     {
+        $menu = Menu::all();
         $blogCategories = BlogCategories::all();
         $categories = Category::all();
         $articles = Article::all();
@@ -35,6 +37,7 @@ class BlogController extends Controller
 
     public function article($id_article)
     {
+        $menu = Menu::all();
         $blogCategories = BlogCategories::all();
         $categories = Category::all();
         $article = Article::getById($id_article);
@@ -46,35 +49,34 @@ class BlogController extends Controller
 
     public function comment($articleId)
     {
+        $errors = null;
 
         if (server('REQUEST_METHOD') == 'POST') {
 
-            //Если авторизованный
-            if (Auth::isAuthorized()) {
+            //если в форме заполнены не все поля
+            if (empty($_POST['comment']) || empty($_POST['name']) || empty($_POST['email'])) {
+                Cookie::set('errors', 'Вы не заполнили все поля', 180);
+                //header('Location: ' . server('HTTP_REFERER'));
+            }
 
-                $user = Auth::getUser();
+            //Если авторизованный
+            if ($user = $this->auth) {
+
                 $name = sprintf("%s %s", $user['firstname'], $user['lastname']);
                 $comment = $_POST['comment'];
 
-
-                $errors = null;
-
-                //Вадидация
+                //Валидация
                 if (!Comments::checkComment($comment)) $errors[] = "Введен слишком длинный комментарий";
 
-
                 if (empty($errors)) {
-
                     //Добавляем коммент
-                    if (Commentators::create($name, $user['email'])) {
-                        $commentator = Commentators::getByEmail($user['email']);//выбираю данные по email (поле unique)
-                        Comments::create($comment, $commentator['id'], $articleId);
-                        header('Location: ' . server('HTTP_REFERER'));
-                    }
+                    $commentator = Commentators::firstOrCreate($name, $user['email']);
+                    Comments::create($comment, $commentator['id'], $articleId);
+                    header('Location: ' . server('HTTP_REFERER'));
                 } else {
-                    Session::set('errors', $errors);
+                    Cookie::set('errors', $errors, 180);
+                    //header('Location: ' . server('HTTP_REFERER'));
                 }
-
 
             } //Если не авторизованный
             else {
@@ -83,23 +85,21 @@ class BlogController extends Controller
                 $email = $_POST['email'];
                 $comment = $_POST['comment'];
 
-                $errors = null;//создаю пустой массив, где будут хранится ошибки при вводе некорректных данных в поля регистрации
                 if (!User::checkName($name)) $errors[] = "Имя введено некорректно";
                 if (!User::checkEmail($email)) $errors[] = "Электронная почта введена некорректно";
                 if (!Comments::checkComment($comment)) $errors[] = "Введен слишком длинный комментарий";
 
                 if (empty($errors)) {
-                    if (Commentators::create($name, $email)) {
-                        $commentator = Commentators::getByEmail($email);//выбираю данные по email (поле unique)
-                        Comments::create($comment, $commentator['id'], $articleId);
-                        header('Location: ' . server('HTTP_REFERER'));
-                    }
+                    $commentator = Commentators::firstOrCreate($name, $email);
+                    Comments::create($comment, $commentator['id'], $articleId);
+                    header('Location: ' . server('HTTP_REFERER'));
                 } else {
-                    Session::set('errors', $errors);
+                    Cookie::set('errors', $errors, 180);
+                    //header('Location: ' . server('HTTP_REFERER'));
                 }
             }
         } else {
-            redirect(301, "/");
+            redirect(301, '/');
         }
     }
 }

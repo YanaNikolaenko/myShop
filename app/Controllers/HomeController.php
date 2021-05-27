@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
+use App\Models\Menu;
 use App\Models\Category;
 use App\Models\Slider;
 use App\Models\Auth;
@@ -27,6 +28,7 @@ class HomeController
      */
     public function index()
     {
+        $menu=Menu::all();
         $sliders=Slider::all();
         $categories=Category::all();
 

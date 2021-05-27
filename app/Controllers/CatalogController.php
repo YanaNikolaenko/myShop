@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Middleware\UserMiddleware;
 use App\Models\Auth;
 use App\Models\Category;
+use App\Models\Menu;
 use App\Models\Product;
 
 /**
@@ -28,6 +29,7 @@ class CatalogController extends Controller
 
     public function index($slug = null)
     {
+        $menu=Menu::all();
         $products = [];
         $categories = [];
         $user = $this->auth;

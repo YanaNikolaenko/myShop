@@ -77,7 +77,7 @@
 
                     <p class="s-text8 p-b-40"></p>
 
-                    <div class="leave-comment" >
+                    <div class="leave-comment" id="comm">
                         <h4 class="m-text25 p-b-14">
                             Comments
                         </h4>
@@ -98,7 +98,7 @@
 
 
                     <!-- Leave a comment -->
-                    <form class="leave-comment" action="comment/<?=$article['id']?>" method="post">
+                    <form class="leave-comment" id="my_form" action="comment/<?=$article['id']?>" method="post">
                         <h4 class="m-text25 p-b-14">
                             Leave a Comment
                         </h4>
@@ -123,8 +123,10 @@
 
                         <div class="w-size24">
                             <!-- Button -->
-                            <button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                            <button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" id="my_btn">
+                                <!--<a href="/article/<?=$article['id']?>#comm">-->
                                 Post Comment
+                                <!--</a>-->
                             </button>
                         </div>
                     </form>

@@ -37,6 +37,8 @@
     "create-commentators-table": "App\\Migrations\\CreateCommentatorsTable::up",
     "create-comments-table": "App\\Migrations\\CreateCommentsTable::up",
 
+    "create-menu-table": "App\\Migrations\\CreateMenuTable::up",
+
     "seed-users": "App\\Seeds\\AddUsers::AddUsers",
     "seed-slider": "App\\Seeds\\AddSlider::AddSlider",
     "seed-categories": "App\\Seeds\\AddCategories::AddCategories",
@@ -51,6 +53,7 @@
     "seed-articles": "App\\Seeds\\AddArticles::AddArticles",
     "seed-commentators": "App\\Seeds\\AddCommentators::AddCommentators",
     "seed-comments": "App\\Seeds\\AddComments::AddComments",
+    "seed-menu": "App\\Seeds\\AddMenu::AddMenu",
 
     "migrate": [
       "@composer delete-all-tables",
@@ -67,7 +70,8 @@
       "@composer create-blog-categories-table",
       "@composer create-articles-table",
       "@composer create-commentators-table",
-      "@composer create-comments-table"
+      "@composer create-comments-table",
+      "@composer create-menu-table"
     ],
     "seed": [
       "@composer seed-users",
@@ -82,7 +86,8 @@
       "@composer seed-blog-categories",
       "@composer seed-articles",
       "@composer seed-commentators",
-      "@composer seed-comments"
+      "@composer seed-comments",
+      "@composer seed-menu"
     ]
   }
 }

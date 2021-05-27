@@ -49,6 +49,6 @@ class Comments
      */
     public static function checkComment(string $comment) : bool
     {
-        return strlen($comment) < 1000;
+        return strlen($comment) < 1000 && strlen($comment) > 0;
     }
 }

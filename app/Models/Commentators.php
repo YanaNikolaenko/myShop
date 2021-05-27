@@ -31,9 +31,26 @@ class Commentators
         return $result->execute();
     }
 
-    public static function firstOrCreate($name, $email): bool
+    /**
+     * @param $name
+     * @param $email
+     * @return mixed
+     */
+    public static function firstOrCreate($name, $email)
     {
-       //TODO: Если не существует создать и вернуть если существует просто вернуть
+        $connect = Db::getConnection();
+        $result = $connect->query("SELECT * FROM `commentators` WHERE email = '$email'");
+        $exist = $result->fetch(PDO::FETCH_ASSOC);
+        if(!$exist)
+        {
+            $result = $connect->prepare("INSERT INTO commentators (name, email) VALUES (:name, :email)");
+            $result->bindParam(':name', $name, PDO::PARAM_STR);
+            $result->bindParam(':email', $email, PDO::PARAM_STR);
+            $result->execute();
+            $result = $connect->query("SELECT * FROM `commentators` WHERE email = '$email'");
+            $exist = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $exist;
     }
 
     public static function getByEmail($email)

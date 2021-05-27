@@ -2395,3 +2395,16 @@ input.num-product::-webkit-inner-spin-button {
     padding-bottom: 40px;
     word-wrap: break-word;
 }
+
+.first, .second, .third {
+    background: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Lato';
+    margin: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
