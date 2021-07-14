@@ -17,10 +17,10 @@ class User
      * This is a function to show all users
      * @return array
      */
-    public static function all()
+    public static function all() : array
     {
         $connect = Db::getConnection();
-        $results = $connect->query("SELECT id, firstname, lastname, email, phone FROM user");
+        $results = $connect->query("SELECT * FROM user");
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -55,7 +55,7 @@ class User
      * @param $phone
      * @return bool
      */
-    public static function create($firstname, $lastname, $email, $password, $phone)
+    public static function create($firstname, $lastname, $email, $password, $phone) : bool
     {
         $connect = Db::getConnection();
         $sql = "INSERT INTO user (firstname, lastname, email, password, phone) VALUES (:firstname, :lastname, :email, :password, :phone)";
@@ -77,11 +77,11 @@ class User
      * @param $phone
      * @return bool
      */
-    public static function update($firstname, $lastname, $email, $password, $phone)
+    public static function update($firstname, $lastname, $email, $password, $phone) : bool
     {
         $connect = Db::getConnection();
 
-        $user = User::selectByEmail($email);
+        $user = User::getByEmail($email);
 
         $sql = 'UPDATE user SET firstname = :firstname, lastname = :lastname, email = :email, password = :password, phone = :phone WHERE id = :user_id;';
         $result = $connect->prepare($sql);
@@ -100,23 +100,28 @@ class User
      * @param $email
      * @return mixed
      */
-    public static function selectByEmail($email)
+    public static function getByEmail($email)
     {
         $connect = Db::getConnection();
-
-        $sql = 'SELECT * FROM user WHERE email = :email';
-        $result = $connect->prepare($sql);
-        $result->bindParam(':email', $email, PDO::PARAM_STR);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
+        $results = $connect->query("SELECT * FROM user WHERE email = '$email'");
+        return $results->fetch(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public static function getById($id)
+    {
+        $connect = Db::getConnection();
+        $results = $connect->query("SELECT * FROM user WHERE id = $id");
+        return $results->fetch(PDO::FETCH_ASSOC);
+    }
 
     /**
-     *
-     * @param string $firstname
-     * @param string $lastname
-     * @param string $password
+     * Проверяет, есть ли зарегистрированный ли пользователь и возвращает его данные
+     * @param $email
+     * @param $password
      * @return mixed
      */
     public static function login($email, $password)
@@ -129,7 +134,5 @@ class User
         $result->execute();
         return $result->fetch(PDO::FETCH_ASSOC);
     }
-
-
 
 }

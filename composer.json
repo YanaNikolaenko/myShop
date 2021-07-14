@@ -22,14 +22,72 @@
     "delete-all-tables": "App\\Migrations\\DeleteTable::deleteAllTables",
     "create-user-table": "App\\Migrations\\CreateUserTable::up",
     "update-user-table": "App\\Migrations\\UpdateUserTable::addColumn",
+    "create-slider-table": "App\\Migrations\\CreateSliderTable::up",
+
+    "create-categories-table": "App\\Migrations\\CreateCategoriesTable::up",
+    "create-products-table": "App\\Migrations\\CreateProductsTable::up",
+    "create-images-table": "App\\Migrations\\CreateImagesTable::up",
+    "create-colors-table": "App\\Migrations\\CreateColorsTable::up",
+    "create-color_product-table": "App\\Migrations\\CreateColorProductTable::up",
+    "create-sizes-table": "App\\Migrations\\CreateSizesTable::up",
+    "create-products_sizes-table": "App\\Migrations\\CreateProductSizeTable::up",
+
+    "create-blog-categories-table": "App\\Migrations\\CreateBlogCategoriesTable::up",
+    "create-articles-table": "App\\Migrations\\CreateArticlesTable::up",
+    "create-commentators-table": "App\\Migrations\\CreateCommentatorsTable::up",
+    "create-comments-table": "App\\Migrations\\CreateCommentsTable::up",
+
+    "create-menu-table": "App\\Migrations\\CreateMenuTable::up",
+
     "seed-users": "App\\Seeds\\AddUsers::AddUsers",
+    "seed-slider": "App\\Seeds\\AddSlider::AddSlider",
+    "seed-categories": "App\\Seeds\\AddCategories::AddCategories",
+    "seed-colors": "App\\Seeds\\AddColors::AddColors",
+    "seed-sizes": "App\\Seeds\\AddSizes::AddSizes",
+    "seed-products": "App\\Seeds\\AddProducts::AddProducts",
+    "seed-images": "App\\Seeds\\AddImages::AddImages",
+    "seed-product-size": "App\\Seeds\\AddProductSize::AddProductSize",
+    "seed-color-product": "App\\Seeds\\AddColorProduct::AddColorProduct",
+
+    "seed-blog-categories": "App\\Seeds\\AddBlogCategories::AddBlogCategories",
+    "seed-articles": "App\\Seeds\\AddArticles::AddArticles",
+    "seed-commentators": "App\\Seeds\\AddCommentators::AddCommentators",
+    "seed-comments": "App\\Seeds\\AddComments::AddComments",
+    "seed-menu": "App\\Seeds\\AddMenu::AddMenu",
+
     "migrate": [
       "@composer delete-all-tables",
       "@composer create-user-table",
-      "@composer update-user-table"
+      "@composer update-user-table",
+      "@composer create-slider-table",
+      "@composer create-categories-table",
+      "@composer create-products-table",
+      "@composer create-images-table",
+      "@composer create-colors-table",
+      "@composer create-color_product-table",
+      "@composer create-sizes-table",
+      "@composer create-products_sizes-table",
+      "@composer create-blog-categories-table",
+      "@composer create-articles-table",
+      "@composer create-commentators-table",
+      "@composer create-comments-table",
+      "@composer create-menu-table"
     ],
     "seed": [
-      "@composer seed-users"
+      "@composer seed-users",
+      "@composer seed-slider",
+      "@composer seed-categories",
+      "@composer seed-colors",
+      "@composer seed-sizes",
+      "@composer seed-products",
+      "@composer seed-images",
+      "@composer seed-product-size",
+      "@composer seed-color-product",
+      "@composer seed-blog-categories",
+      "@composer seed-articles",
+      "@composer seed-commentators",
+      "@composer seed-comments",
+      "@composer seed-menu"
     ]
   }
 }

@@ -11,7 +11,7 @@ class UpdateUserTable extends Migration
     {
         $instance = new self();
 
-        $sql = "ALTER TABLE user ADD phone varchar(13);";
+        $sql = "ALTER TABLE user ADD phone char(13);";
         $result = $instance->con->query($sql);
 
         //проверка выполнения

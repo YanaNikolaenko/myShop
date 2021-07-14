@@ -3,11 +3,14 @@
 namespace App\Controllers;
 
 use App\Middleware\UserMiddleware;
+use App\Models\Menu;
+use App\Models\Category;
+use App\Models\Slider;
 use App\Models\Auth;
-use App\Models\User;
+
 
 /**
- * Class CabinetController
+ * Class HomeController
  * @package App\Controllers
  */
 class HomeController
@@ -25,9 +28,15 @@ class HomeController
      */
     public function index()
     {
-        //$sliders=Slider::all();
+        $menu=Menu::all();
+        $sliders=Slider::all();
+        $categories=Category::all();
 
-        require VIEW_ROOT . "home/index.php";
+        if(Auth::isAuthorized())
+        {
+            $user = Auth::getUser();
+        }
+        require VIEW_ROOT . "home/home.php";
     }
 
 
